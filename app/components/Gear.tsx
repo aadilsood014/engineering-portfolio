@@ -3,6 +3,7 @@
 type GearProps = {
   teeth: number;
   rotation: number;
+  scale?: number;
 };
 
 const TOOTH_PITCH = 14;
@@ -81,6 +82,7 @@ function createGearPath(
 export default function Gear({
   teeth,
   rotation,
+  scale = 1,
 }: GearProps) {
   const pitchRadius =
     getGearRadius(teeth);
@@ -116,7 +118,7 @@ export default function Gear({
 
         transform:
           `translate(-50%, -50%) ` +
-          `rotate(${rotation}deg)`,
+          `rotate(${rotation}deg) scale(${scale})`,
       }}
     >
       <svg
