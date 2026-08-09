@@ -1,4 +1,3 @@
-```tsx
 import Link from "next/link";
 
 export default function Home() {
@@ -48,7 +47,7 @@ export default function Home() {
           engineering design, physics, and building practical systems.
         </p>
 
-        <p>
+        <p className="mt-6 max-w-2xl leading-relaxed">
           I'm an Engineering Physics student at the University of
           British Columbia with a passion for engineering design,
           physics, and hands-on problem solving. I enjoy taking
@@ -113,4 +112,3 @@ export default function Home() {
     </main>
   );
 }
-```
