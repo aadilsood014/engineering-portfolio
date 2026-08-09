@@ -3,27 +3,29 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-16 py-6 md:px-6">
-        <h2>AADIL SOOD</h2>
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 md:px-6">
+        <h2 className="text-sm font-semibold sm:text-base">
+          AADIL SOOD
+        </h2>
 
-        <div>
+        <div className="flex flex-wrap justify-end gap-2 sm:gap-3">
           <a
             href="/About"
-            className="mx-2 project-button inline-block rounded-lg bg-white px-2 py-2 font-medium text-zinc-950"
+            className="project-button inline-block rounded-lg bg-white px-2 py-2 text-sm font-medium text-zinc-950 sm:px-3"
           >
             About
           </a>
 
           <a
             href="#projects"
-            className="mx-2 project-button inline-block rounded-lg bg-white px-2 py-2 font-medium text-zinc-950"
+            className="project-button inline-block rounded-lg bg-white px-2 py-2 text-sm font-medium text-zinc-950 sm:px-3"
           >
             Projects
           </a>
 
           <a
             href="#contact"
-            className="mx-2 project-button inline-block rounded-lg bg-white px-2 py-2 font-medium text-zinc-950"
+            className="project-button inline-block rounded-lg bg-white px-2 py-2 text-sm font-medium text-zinc-950 sm:px-3"
           >
             Contact
           </a>
