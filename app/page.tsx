@@ -34,7 +34,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="mx-auto max-w-6xl px-6 md:px-10 lg:pt-12 lg:pb-12">
+      <section className="mx-auto max-w-6xl px-6 md:px-10 lg:pt-12 lg:pb-12 sm:px-6">
         <div className="grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr]">
 
           {/* Left side */}
@@ -106,7 +106,7 @@ export default function Home() {
         id="projects"
         className="mx-auto max-w-6xl px-6 md:px-10"
       >
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:mt-6">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:mt-6 sm:px-6">
           <Link
             href="/projects/project-1"
             className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-8"
