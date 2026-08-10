@@ -1,7 +1,7 @@
 export default function Project2() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-24">
-      <p className="text-sm font-medium tracking-widest text-[#3aedb1]">
+      <p className="text-sm font-medium tracking-widest text-[var(--accent)]">
         PROJECT
       </p>
 

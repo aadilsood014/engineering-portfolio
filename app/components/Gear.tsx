@@ -7,7 +7,7 @@ type GearProps = {
 };
 
 const TOOTH_PITCH = 14;
-const TOOTH_HEIGHT = 5;
+const TOOTH_HEIGHT = 8;
 const ROOT_DEPTH = 3;
 
 export function getGearRadius(teeth: number) {
@@ -130,7 +130,7 @@ export default function Gear({
       >
         <path
           d={gearPath}
-          fill="#3aedb1"
+          fill="#8B7CF6"
         />
 
         {/* Center hole */}

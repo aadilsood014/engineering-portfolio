@@ -23,7 +23,7 @@ body {
 }
 
 .project-button:hover {
-  background-color: #3aedb1;
+  background-color: #8B7CF6;
 }
 
 .project-card {
@@ -32,5 +32,15 @@ body {
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: #3aedb1;
+  border-color: #8B7CF6;
+}
+
+:root {
+  --accent: #8B7CF6;
+}
+
+.numbered-list {
+  padding-left: 20px;
+  /* Use 'decimal' for standard 1, 2, 3 numbering */
+  list-style-type: decimal; 
 }
