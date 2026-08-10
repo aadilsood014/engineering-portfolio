@@ -81,41 +81,41 @@ void loop() {
 `;
 
   return (
-    <main
-      id="top"
-      className="min-h-screen bg-[#080D12]"
-    >
-      <div className="mx-auto max-w-6xl px-6 md:px-10 sm:px-6">
+    <main id="top" className="min-h-screen bg-[#080D12]">
 
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 md:px-10">
+      {/* Navbar */}
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-6 md:px-10">
         <div className="flex items-center">
           <span className="text-sm font-medium tracking-[0.2em] text-zinc-400">
             PROJECT
           </span>
         </div>
 
-        <div className="flex items-center gap-6 sm:gap-3">
+        <div className="flex items-center gap-3">
           <a
             href="/"
-            className="project-button inline-block rounded-lg bg-white px-2 py-2 text-sm font-medium text-zinc-950 sm:px-3"
+            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-3"
           >
             Home
           </a>
         </div>
       </nav>
 
-        <h1 className="mt-4 text-5xl font-bold tracking-tight text-[var(--accent)]">
+      {/* Main Content */}
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10">
+
+        <h1 className="mt-4 text-4xl font-bold tracking-tight text-[var(--accent)] sm:text-5xl">
           Automated Mechanical Claw
         </h1>
 
-        <p className="mt-6 text-xl text-white">
+        <p className="mt-6 text-lg text-white sm:text-xl">
           <span className="underline">Purpose</span>
           : To design and build a fully autonomous claw, which has the ability
           to pick up and transfer numerous objects varying in size, shape, and
           weight for a design competition in my UBC APSC 101 Class.
         </p>
 
-        <p className="mt-6 text-xl text-white">
+        <p className="mt-6 text-lg text-white sm:text-xl">
           <span className="underline">Understanding the task</span>
           : I worked with my APSC group to take on the challenge. We had to
           create an autonomous claw which could detect when an object was
@@ -125,7 +125,7 @@ void loop() {
           obstacles:
         </p>
 
-        <ol className="mt-6 space-y-4 text-xl text-white">
+        <ol className="mt-6 space-y-4 text-lg text-white sm:text-xl">
           <li className="flex">
             <span className="shrink-0">Round 1 - </span>
             <span>
@@ -150,7 +150,7 @@ void loop() {
           </li>
         </ol>
 
-        <p className="mt-6 text-xl text-white">
+        <p className="mt-6 text-lg text-white sm:text-xl">
           <span className="underline">Tools and Equipment</span>
           : We were permitted to use Arduino electronics limited to one servo
           motor, one sonar sensor, one microcontroller board, and no external
@@ -159,14 +159,15 @@ void loop() {
           studio time we could use a variety of hand tools.
         </p>
 
+        {/* Brainstorming */}
         <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
           <img
             src="/brainstorm.png"
             alt="Brainstorm"
-            className="w-full max-w-[350px] object-cover shadow-2xl"
+            className="mx-auto w-full max-w-[350px] object-cover shadow-2xl md:mx-0"
           />
 
-          <p className="flex-1 text-xl leading-7 text-white">
+          <p className="flex-1 text-lg leading-7 text-white sm:text-xl">
             <span className="underline">Brainstorming</span>
             : Each team member came up with unique ideas to tackle the problem,
             mainly considering how to transfer the fixed rotational motion of
@@ -185,8 +186,9 @@ void loop() {
           </p>
         </div>
 
+        {/* TinkerCAD */}
         <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
-          <p className="flex-1 text-xl leading-7 text-white">
+          <p className="flex-1 text-lg leading-7 text-white sm:text-xl">
             However, this was only half of the task, as we needed to figure out
             how to make this system autonomous. Thus, I first started playing
             around with TinkerCAD to see how a sonar sensor could interact with
@@ -196,11 +198,11 @@ void loop() {
           <img
             src="/tinker.png"
             alt="TinkerCAD Setup"
-            className="w-full max-w-[350px] object-cover shadow-2xl"
+            className="mx-auto w-full max-w-[350px] object-cover shadow-2xl md:mx-0"
           />
         </div>
 
-        <p className="mt-6 flex-1 text-xl leading-7 text-white">
+        <p className="mt-6 flex-1 text-lg leading-7 text-white sm:text-xl">
           I setup a threshold distance that the sonar sensor would detect and
           rotate the servo accordingly. However, this was not the ideal
           solution as the servo would toggle between the two positions as I
@@ -217,7 +219,7 @@ void loop() {
           <div className="w-full max-w-4xl overflow-hidden rounded-xl border border-[#8B7CF6]/25 bg-[#11101A]">
 
             {/* Code Header */}
-            <div className="border-b border-[#8B7CF6]/15 bg-[#171522] px-5 py-3">
+            <div className="border-b border-[#8B7CF6]/15 bg-[#171522] px-4 py-3 sm:px-5">
               <span className="font-mono text-sm text-[#A69CF8]">
                 Arduino.ino
               </span>
@@ -229,8 +231,8 @@ void loop() {
                 isCodeExpanded ? "max-h-[2000px]" : "max-h-[250px]"
               }`}
             >
-              <pre className="overflow-x-auto p-4 sm:p-6">
-                <code className="font-mono text-[11px] leading-[1.35] text-[#E4E1F5] sm:text-[13px]">
+              <pre className="overflow-x-auto p-3 sm:p-6">
+                <code className="font-mono text-[10px] leading-[1.35] text-[#E4E1F5] sm:text-[13px]">
                   {code}
                 </code>
               </pre>
@@ -254,7 +256,7 @@ void loop() {
           </div>
         </div>
 
-        <p className="mt-6 flex-1 text-xl leading-7 text-white">
+        <p className="mt-6 flex-1 text-lg leading-7 text-white sm:text-xl">
           This allowed me to easily change the threshold value to the height of
           the opened claw so when it touched the ground it would close up and
           the only way it would open and drop an object if it touched the ground
@@ -263,7 +265,7 @@ void loop() {
           the threshold value.
         </p>
 
-        <p className="mt-6 text-xl text-white">
+        <p className="mt-6 text-lg text-white sm:text-xl">
           <span className="underline">Implementing the solution</span>
           : Before we touched the actual sheet metal, we made detailed
           orthographic drawings and circuit schematics which would outline
@@ -271,28 +273,31 @@ void loop() {
           these are attached below:
         </p>
 
+        {/* Orthographic drawings */}
         <div className="mt-6 grid items-center gap-6 md:grid-cols-2">
           <img
             src="/ortho1.jpg"
             alt="Ortho1"
-            className="w-full object-cover shadow-2xl"
+            className="mx-auto w-full object-cover shadow-2xl"
           />
 
           <img
             src="/ortho2.jpg"
             alt="Ortho2"
-            className="w-full object-cover shadow-2xl"
+            className="mx-auto w-full object-cover shadow-2xl"
           />
         </div>
 
+        {/* Circuit */}
         <img
           src="/circuit.png"
           alt="circuit"
           className="mx-auto mt-6 w-full max-w-[700px] object-cover shadow-2xl"
         />
 
+        {/* Final Claw */}
         <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
-          <p className="flex-1 text-xl leading-7 text-white">
+          <p className="flex-1 text-lg leading-7 text-white sm:text-xl">
             When assembling the claw a few problems arose that needed to be
             addressed. For instance, the range of motion of the claw was
             relatively limited due to the servo only rotating 180 degrees. To
@@ -312,7 +317,7 @@ void loop() {
           <img
             src="/finalClaw.jpg"
             alt="Final Claw"
-            className="w-full max-w-[350px] object-cover shadow-2xl"
+            className="mx-auto w-full max-w-[350px] object-cover shadow-2xl md:mx-0"
           />
         </div>
 
