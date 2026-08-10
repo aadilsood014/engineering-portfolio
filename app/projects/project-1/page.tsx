@@ -83,7 +83,7 @@ void loop() {
   return (
     <main id="top" className="min-h-screen bg-[#080D12]">
       {/* Navbar */}
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-6 md:px-10">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-8 md:px-10">
         <div className="flex items-center">
           <span className="text-xs font-medium tracking-[0.2em] text-zinc-400 sm:text-sm">
             PROJECT
@@ -101,7 +101,7 @@ void loop() {
       </nav>
 
       {/* Main Content */}
-      <div className="mx-auto max-w-6xl px-6 sm:px-8 md:px-10">
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-10">
 
         <h1 className="mt-4 text-4xl font-bold tracking-tight text-[var(--accent)] sm:text-5xl">
           Automated Mechanical Claw
@@ -218,7 +218,7 @@ void loop() {
           <div className="w-full max-w-4xl overflow-hidden rounded-xl border border-[#8B7CF6]/25 bg-[#11101A]">
 
             {/* Code Header */}
-            <div className="border-b border-[#8B7CF6]/15 bg-[#171522] px-4 py-3 sm:px-5">
+            <div className="border-b border-[#8B7CF6]/15 bg-[#171522] px-4 py-3 sm:px-7">
               <span className="font-mono text-sm text-[#A69CF8]">
                 Arduino.ino
               </span>
@@ -230,7 +230,7 @@ void loop() {
                 isCodeExpanded ? "max-h-[2000px]" : "max-h-[250px]"
               }`}
             >
-              <pre className="overflow-x-auto p-3 sm:p-6">
+              <pre className="overflow-x-auto p-3 sm:p-7">
                 <code className="font-mono text-[10px] leading-[1.35] text-[#E4E1F5] sm:text-[13px]">
                   {code}
                 </code>
