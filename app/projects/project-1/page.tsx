@@ -25,65 +25,63 @@ unsigned long underStartTime = 0;
 unsigned long lastToggleTime = 0;
 
 long getDistanceCM() {
-digitalWrite(TRIG_PIN, LOW);
-delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
 
-digitalWrite(TRIG_PIN, HIGH);
-delayMicroseconds(10);
-digitalWrite(TRIG_PIN, LOW);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
 
-long duration = pulseIn(ECHO_PIN, HIGH, 30000);
-long distance = duration * 0.034 / 2;
+  long duration = pulseIn(ECHO_PIN, HIGH, 30000);
+  long distance = duration * 0.034 / 2;
 
-return distance;
+  return distance;
 }
 
 void setup() {
-pinMode(TRIG_PIN, OUTPUT);
-pinMode(ECHO_PIN, INPUT);
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
 
-myServo.attach(SERVO_PIN);
-myServo.write(0);
+  myServo.attach(SERVO_PIN);
+  myServo.write(0);
 
-Serial.begin(9600);
+  Serial.begin(9600);
 }
 
 void loop() {
-long distance = getDistanceCM();
-bool isUnderThreshold = (distance < THRESHOLD);
-unsigned long now = millis();
+  long distance = getDistanceCM();
+  bool isUnderThreshold = (distance < THRESHOLD);
+  unsigned long now = millis();
 
-// Start timing when object first enters range
-if (isUnderThreshold && !wasUnderThreshold) {
-underStartTime = now;
-}
+  // Start timing when object first enters range
+  if (isUnderThreshold && !wasUnderThreshold) {
+    underStartTime = now;
+  }
 
-// Trigger only if:
-// 1. Object stayed close long enough
-// 2. Cooldown has passed
-if (isUnderThreshold &&
-(now - underStartTime >= TRIGGER_TIME) &&
-(now - lastToggleTime >= COOLDOWN_TIME)) {
+  // Trigger only if:
+  // 1. Object stayed close long enough
+  // 2. Cooldown has passed
+  if (isUnderThreshold &&
+      (now - underStartTime >= TRIGGER_TIME) &&
+      (now - lastToggleTime >= COOLDOWN_TIME)) {
 
-servoState = !servoState;
-lastToggleTime = now;
+    servoState = !servoState;
+    lastToggleTime = now;
+  }
 
-}
+  // Move servo
+  myServo.write(servoState ? 90 : 0);
 
-// Move servo
-myServo.write(servoState ? 90 : 0);
+  wasUnderThreshold = isUnderThreshold;
 
-wasUnderThreshold = isUnderThreshold;
+  Serial.print("Distance: ");
+  Serial.println(distance);
 
-Serial.print("Distance: ");
-Serial.println(distance);
-
-delay(30); // small smoothing delay
+  delay(30); // small smoothing delay
 `;
 
   return (
-    <main id="top">
-
+    <main id="top" className="min-h-screen bg-[#080D12]">
       {/* Navbar */}
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-6 md:px-10">
         <div className="flex items-center">

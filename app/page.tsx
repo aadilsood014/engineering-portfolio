@@ -5,7 +5,7 @@ export default function Home() {
     <main>
 
       {/* Navbar */}
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-6 md:px-10">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-8 py-6 sm:px-8 md:px-10">
         <h2 className="text-base font-semibold sm:text-lg">
           AADIL SOOD
         </h2>
@@ -35,7 +35,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10 lg:pt-12 lg:pb-12">
+      <section className="mx-auto max-w-6xl px-8 sm:px-8 md:px-10 lg:pb-12 lg:pt-12">
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
 
           {/* Left side */}
@@ -109,7 +109,7 @@ export default function Home() {
       {/* Projects */}
       <section
         id="projects"
-        className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10"
+        className="mx-auto max-w-6xl px-8 sm:px-8 md:px-10"
       >
         <div className="mt-10 grid gap-6 sm:mt-12 md:grid-cols-2 lg:mt-6">
 
@@ -160,7 +160,7 @@ export default function Home() {
       {/* Contact */}
       <section
         id="contact"
-        className="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24 md:px-10"
+        className="mx-auto max-w-6xl px-8 py-20 sm:px-8 sm:py-24 md:px-10"
       >
         <p>GET IN TOUCH</p>
 
