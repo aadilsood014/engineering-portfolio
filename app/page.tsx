@@ -5,7 +5,7 @@ export default function Home() {
     <main>
 
       {/* Navbar */}
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-8 py-6 sm:px-8 md:px-10">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-8 py-6 sm:px-10 md:px-10">
         <h2 className="text-base font-semibold sm:text-lg">
           AADIL SOOD
         </h2>
@@ -20,14 +20,14 @@ export default function Home() {
 
           <a
             href="#projects"
-            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-3"
+            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-5"
           >
             Projects
           </a>
 
           <a
             href="#contact"
-            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-3"
+            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-5"
           >
             Contact
           </a>
@@ -35,7 +35,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="mx-auto max-w-6xl px-8 sm:px-8 md:px-10 lg:pb-12 lg:pt-12">
+      <section className="mx-auto max-w-6xl px-8 sm:px-10 md:px-10 lg:pb-12 lg:pt-12">
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
 
           {/* Left side */}
@@ -67,14 +67,14 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
               <a
                 href="#projects"
-                className="project-button rounded-lg bg-white px-5 py-3 text-sm font-medium text-zinc-950 sm:px-6 sm:text-base"
+                className="project-button rounded-lg bg-white px-5 py-3 text-sm font-medium text-zinc-950 sm:px-8 sm:text-base"
               >
                 View My Projects →
               </a>
 
               <a
                 href="#contact"
-                className="rounded-lg border border-zinc-700 px-5 py-3 text-sm font-medium text-zinc-300 transition hover:border-[var(--accent)] hover:text-[var(--accent)] sm:px-6 sm:text-base"
+                className="project-card rounded-lg border border-zinc-700 px-5 py-3 text-sm font-medium text-zinc-300 transition hover:border-[var(--accent)] hover:text-[var(--accent)] sm:px-8 sm:text-base"
               >
                 Get in Touch
               </a>
@@ -109,13 +109,13 @@ export default function Home() {
       {/* Projects */}
       <section
         id="projects"
-        className="mx-auto max-w-6xl px-8 sm:px-8 md:px-10"
+        className="mx-auto max-w-6xl px-8 sm:px-10 md:px-10"
       >
         <div className="mt-10 grid gap-6 sm:mt-12 md:grid-cols-2 lg:mt-6">
 
           <Link
             href="/projects/project-1"
-            className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8"
+            className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-10"
           >
             <img
               src="/claw1.png"
@@ -143,7 +143,7 @@ export default function Home() {
 
           <Link
             href="/projects/project-2"
-            className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8"
+            className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-10"
           >
             <h3 className="text-2xl font-semibold">
               Project 2
@@ -160,7 +160,7 @@ export default function Home() {
       {/* Contact */}
       <section
         id="contact"
-        className="mx-auto max-w-6xl px-8 py-20 sm:px-8 sm:py-24 md:px-10"
+        className="mx-auto max-w-6xl px-8 py-20 sm:px-10 sm:py-24 md:px-10"
       >
         <p>GET IN TOUCH</p>
 
