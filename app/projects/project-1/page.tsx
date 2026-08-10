@@ -25,68 +25,69 @@ unsigned long underStartTime = 0;
 unsigned long lastToggleTime = 0;
 
 long getDistanceCM() {
-  digitalWrite(TRIG_PIN, LOW);
-  delayMicroseconds(2);
+digitalWrite(TRIG_PIN, LOW);
+delayMicroseconds(2);
 
-  digitalWrite(TRIG_PIN, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(TRIG_PIN, LOW);
+digitalWrite(TRIG_PIN, HIGH);
+delayMicroseconds(10);
+digitalWrite(TRIG_PIN, LOW);
 
-  long duration = pulseIn(ECHO_PIN, HIGH, 30000);
-  long distance = duration * 0.034 / 2;
+long duration = pulseIn(ECHO_PIN, HIGH, 30000);
+long distance = duration * 0.034 / 2;
 
-  return distance;
+return distance;
 }
 
 void setup() {
-  pinMode(TRIG_PIN, OUTPUT);
-  pinMode(ECHO_PIN, INPUT);
+pinMode(TRIG_PIN, OUTPUT);
+pinMode(ECHO_PIN, INPUT);
 
-  myServo.attach(SERVO_PIN);
-  myServo.write(0);
+myServo.attach(SERVO_PIN);
+myServo.write(0);
 
-  Serial.begin(9600);
+Serial.begin(9600);
 }
 
 void loop() {
-  long distance = getDistanceCM();
-  bool isUnderThreshold = (distance < THRESHOLD);
-  unsigned long now = millis();
+long distance = getDistanceCM();
+bool isUnderThreshold = (distance < THRESHOLD);
+unsigned long now = millis();
 
-  // Start timing when object first enters range
-  if (isUnderThreshold && !wasUnderThreshold) {
-    underStartTime = now;
-  }
+// Start timing when object first enters range
+if (isUnderThreshold && !wasUnderThreshold) {
+underStartTime = now;
+}
 
-  // Trigger only if:
-  // 1. Object stayed close long enough
-  // 2. Cooldown has passed
-  if (isUnderThreshold &&
-      (now - underStartTime >= TRIGGER_TIME) &&
-      (now - lastToggleTime >= COOLDOWN_TIME)) {
+// Trigger only if:
+// 1. Object stayed close long enough
+// 2. Cooldown has passed
+if (isUnderThreshold &&
+(now - underStartTime >= TRIGGER_TIME) &&
+(now - lastToggleTime >= COOLDOWN_TIME)) {
 
-    servoState = !servoState;
-    lastToggleTime = now;
-  }
+servoState = !servoState;
+lastToggleTime = now;
 
-  // Move servo
-  myServo.write(servoState ? 90 : 0);
+}
 
-  wasUnderThreshold = isUnderThreshold;
+// Move servo
+myServo.write(servoState ? 90 : 0);
 
-  Serial.print("Distance: ");
-  Serial.println(distance);
+wasUnderThreshold = isUnderThreshold;
 
-  delay(30); // small smoothing delay
+Serial.print("Distance: ");
+Serial.println(distance);
+
+delay(30); // small smoothing delay
 `;
 
   return (
-    <main id="top" className="min-h-screen bg-[#080D12]">
+    <main id="top">
 
       {/* Navbar */}
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-6 md:px-10">
         <div className="flex items-center">
-          <span className="text-sm font-medium tracking-[0.2em] text-zinc-400">
+          <span className="text-xs font-medium tracking-[0.2em] text-zinc-400 sm:text-sm">
             PROJECT
           </span>
         </div>
@@ -94,7 +95,7 @@ void loop() {
         <div className="flex items-center gap-3">
           <a
             href="/"
-            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-3"
+            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950"
           >
             Home
           </a>
@@ -102,20 +103,20 @@ void loop() {
       </nav>
 
       {/* Main Content */}
-      <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10">
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 md:px-10">
 
         <h1 className="mt-4 text-4xl font-bold tracking-tight text-[var(--accent)] sm:text-5xl">
           Automated Mechanical Claw
         </h1>
 
-        <p className="mt-6 text-lg text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
           <span className="underline">Purpose</span>
           : To design and build a fully autonomous claw, which has the ability
           to pick up and transfer numerous objects varying in size, shape, and
           weight for a design competition in my UBC APSC 101 Class.
         </p>
 
-        <p className="mt-6 text-lg text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
           <span className="underline">Understanding the task</span>
           : I worked with my APSC group to take on the challenge. We had to
           create an autonomous claw which could detect when an object was
@@ -125,15 +126,15 @@ void loop() {
           obstacles:
         </p>
 
-        <ol className="mt-6 space-y-4 text-lg text-white sm:text-xl">
-          <li className="flex">
+        <ol className="mt-6 space-y-4 text-base leading-7 text-white sm:text-xl">
+          <li className="flex gap-2">
             <span className="shrink-0">Round 1 - </span>
             <span>
               A sequence of random objects of varying shapes and sizes.
             </span>
           </li>
 
-          <li className="flex">
+          <li className="flex gap-2">
             <span className="shrink-0">Round 2 - </span>
             <span>
               A batch of identically shaped blocks with the goal of picking up
@@ -141,7 +142,7 @@ void loop() {
             </span>
           </li>
 
-          <li className="flex">
+          <li className="flex gap-2">
             <span className="shrink-0">Round 3 - </span>
             <span>
               Bulk round with a variety of larger objects that can be lifted up
@@ -150,7 +151,7 @@ void loop() {
           </li>
         </ol>
 
-        <p className="mt-6 text-lg text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
           <span className="underline">Tools and Equipment</span>
           : We were permitted to use Arduino electronics limited to one servo
           motor, one sonar sensor, one microcontroller board, and no external
@@ -160,14 +161,14 @@ void loop() {
         </p>
 
         {/* Brainstorming */}
-        <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
+        <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-center">
           <img
             src="/brainstorm.png"
             alt="Brainstorm"
-            className="mx-auto w-full max-w-[350px] object-cover shadow-2xl md:mx-0"
+            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
           />
 
-          <p className="flex-1 text-lg leading-7 text-white sm:text-xl">
+          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
             <span className="underline">Brainstorming</span>
             : Each team member came up with unique ideas to tackle the problem,
             mainly considering how to transfer the fixed rotational motion of
@@ -187,8 +188,8 @@ void loop() {
         </div>
 
         {/* TinkerCAD */}
-        <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
-          <p className="flex-1 text-lg leading-7 text-white sm:text-xl">
+        <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-center">
+          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
             However, this was only half of the task, as we needed to figure out
             how to make this system autonomous. Thus, I first started playing
             around with TinkerCAD to see how a sonar sensor could interact with
@@ -198,11 +199,11 @@ void loop() {
           <img
             src="/tinker.png"
             alt="TinkerCAD Setup"
-            className="mx-auto w-full max-w-[350px] object-cover shadow-2xl md:mx-0"
+            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
           />
         </div>
 
-        <p className="mt-6 flex-1 text-lg leading-7 text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
           I setup a threshold distance that the sonar sensor would detect and
           rotate the servo accordingly. However, this was not the ideal
           solution as the servo would toggle between the two positions as I
@@ -256,7 +257,7 @@ void loop() {
           </div>
         </div>
 
-        <p className="mt-6 flex-1 text-lg leading-7 text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
           This allowed me to easily change the threshold value to the height of
           the opened claw so when it touched the ground it would close up and
           the only way it would open and drop an object if it touched the ground
@@ -265,7 +266,7 @@ void loop() {
           the threshold value.
         </p>
 
-        <p className="mt-6 text-lg text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
           <span className="underline">Implementing the solution</span>
           : Before we touched the actual sheet metal, we made detailed
           orthographic drawings and circuit schematics which would outline
@@ -274,7 +275,7 @@ void loop() {
         </p>
 
         {/* Orthographic drawings */}
-        <div className="mt-6 grid items-center gap-6 md:grid-cols-2">
+        <div className="mt-8 grid items-center gap-6 md:grid-cols-2">
           <img
             src="/ortho1.jpg"
             alt="Ortho1"
@@ -292,12 +293,12 @@ void loop() {
         <img
           src="/circuit.png"
           alt="circuit"
-          className="mx-auto mt-6 w-full max-w-[700px] object-cover shadow-2xl"
+          className="mx-auto mt-8 w-full max-w-[700px] object-cover shadow-2xl"
         />
 
         {/* Final Claw */}
-        <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
-          <p className="flex-1 text-lg leading-7 text-white sm:text-xl">
+        <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-center">
+          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
             When assembling the claw a few problems arose that needed to be
             addressed. For instance, the range of motion of the claw was
             relatively limited due to the servo only rotating 180 degrees. To
@@ -317,7 +318,7 @@ void loop() {
           <img
             src="/finalClaw.jpg"
             alt="Final Claw"
-            className="mx-auto w-full max-w-[350px] object-cover shadow-2xl md:mx-0"
+            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
           />
         </div>
 

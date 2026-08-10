@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#080D12]">
+    <main>
 
       {/* Navbar */}
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-6 md:px-10">
@@ -56,7 +56,12 @@ export default function Home() {
             </p>
 
             <p className="mt-5 text-base leading-7 text-zinc-400 sm:text-lg">
-              My experience spans mechanical design, robotics, precision metrology, and instrumentation. I am particularly interested in exploring particle and nuclear physics and developing a deeper understanding of their practical applications. I enjoy applying physics and engineering principles to build practical systems and am eager to expand my experience in these fields.
+              My experience spans mechanical design, robotics, precision
+              metrology, and instrumentation. I am particularly interested in
+              exploring particle and nuclear physics and developing a deeper
+              understanding of their practical applications. I enjoy applying
+              physics and engineering principles to build practical systems
+              and am eager to expand my experience in these fields.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
@@ -123,11 +128,16 @@ export default function Home() {
             </h3>
 
             <p className="mt-4 leading-relaxed text-zinc-400">
-              Designed and fabricated an automated mechanical claw capable of detecting objects and triggering servo-controlled actuation. Developed the mechanical structure using sheet metal and hand tools, then programmed an Arduino to process ultrasonic sensor input and control the servo motor.
+              Designed and fabricated an automated mechanical claw capable of
+              detecting objects and triggering servo-controlled actuation.
+              Developed the mechanical structure using sheet metal and hand
+              tools, then programmed an Arduino to process ultrasonic sensor
+              input and control the servo motor.
             </p>
 
             <p className="mt-4 leading-relaxed text-zinc-400">
-              Skills: C++ · Arduino · Ultrasonic Sensor · Servo Motor · Mechanical Fabrication
+              Skills: C++ · Arduino · Ultrasonic Sensor · Servo Motor ·
+              Mechanical Fabrication
             </p>
           </Link>
 
