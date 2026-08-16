@@ -146,7 +146,7 @@ export default function Home() {
             className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-10"
           >
             <img
-              src="/vexbot.jpg"
+              src="/vexbot.JPG"
               alt="vexbot"
               className="mx-auto mb-4 w-full max-w-[175px] object-cover shadow-2xl"
             />
@@ -184,7 +184,7 @@ export default function Home() {
             </h2>
           </div>
 
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+        <div className="mt-4 flex flex-wrap justify-center gap-2 sm:gap-3">
           <a
             href="https://www.linkedin.com/in/aadilsood14"
             className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-3"
