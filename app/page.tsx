@@ -35,7 +35,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="mx-auto max-w-6xl px-8 sm:px-10 md:px-10 lg:pb-12 lg:pt-12">
+      <section className="border-t border-white/10 pt-16 mx-auto max-w-6xl px-8 sm:px-10 md:px-10 lg:pb-12 lg:pt-12">
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
 
           {/* Left side */}
@@ -136,7 +136,7 @@ export default function Home() {
             </p>
 
             <p className="mt-4 leading-relaxed text-zinc-400">
-              Skills: C++ · Arduino · Ultrasonic Sensor · Servo Motor ·
+              Skills: C++ · Arduino · Engineering Drawing ·
               Mechanical Fabrication
             </p>
           </Link>
@@ -145,12 +145,24 @@ export default function Home() {
             href="/projects/project-2"
             className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-10"
           >
-            <h3 className="text-2xl font-semibold">
-              Project 2
+            <img
+              src="/vexbot.jpg"
+              alt="vexbot"
+              className="mx-auto mb-4 w-full max-w-[175px] object-cover shadow-2xl"
+            />
+
+            <h3 className="text-2xl font-semibold text-[var(--accent)]">
+              VEX Robotics - Spin Up
             </h3>
 
             <p className="mt-4 leading-relaxed text-zinc-400">
-              Info
+              Designed and built VEX robots for the Spin Up competition, developing drivetrain and 
+              catapult systems through CAD modeling and iterative prototyping. Used Fusion 360 to 
+              refine mechanical assemblies and improve robot performance, reliability, and efficiency.
+            </p>
+
+            <p className="mt-4 leading-relaxed text-zinc-400">
+              Skills: Fusion 360 · CAD · Mechanical Design · Subsystem Design · Iterative Design
             </p>
           </Link>
 
@@ -162,9 +174,41 @@ export default function Home() {
         id="contact"
         className="mx-auto max-w-6xl px-8 py-20 sm:px-10 sm:py-24 md:px-10"
       >
-        <p>GET IN TOUCH</p>
+          <div className="border-t border-white/10 pt-16">
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[var(--accent)]">
+              Contact
+            </p>
 
-        <h2>Let's build something.</h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-2xl">
+              Let’s build something.
+            </h2>
+          </div>
+
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+          <a
+            href="https://www.linkedin.com/in/aadilsood14"
+            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-3"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="mailto:aadilsood014@gmail.com"
+            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-5"
+          >
+            Email
+          </a>
+
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 sm:px-5"
+          >
+            Resume
+          </a>
+        </div>
+
       </section>
 
     </main>

@@ -12,14 +12,11 @@ const LARGE_GEAR_SCALE = 0.85;
 export default function GearTrain() {
   const [mounted, setMounted] = useState(false);
 
-  const [scrollRotation, setScrollRotation] =
-    useState(0);
+  const [scrollRotation, setScrollRotation] = useState(0);
 
-  const [screenWidth, setScreenWidth] =
-    useState(0);
+  const [screenWidth, setScreenWidth] = useState(0);
 
-  const [screenHeight, setScreenHeight] =
-    useState(0);
+  const [screenHeight, setScreenHeight] = useState(0);
 
   // ============================
   // MOUNT
@@ -43,16 +40,10 @@ export default function GearTrain() {
 
     updateScreenSize();
 
-    window.addEventListener(
-      "resize",
-      updateScreenSize
-    );
+    window.addEventListener("resize", updateScreenSize);
 
     return () => {
-      window.removeEventListener(
-        "resize",
-        updateScreenSize
-      );
+      window.removeEventListener("resize", updateScreenSize);
     };
   }, [mounted]);
 
@@ -66,41 +57,36 @@ export default function GearTrain() {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      const currentScrollY =
-        window.scrollY;
+      const currentScrollY = window.scrollY;
 
-      const difference =
-        currentScrollY -
-        lastScrollY;
+      const difference = currentScrollY - lastScrollY;
 
-      setScrollRotation(
-        (previous) =>
-          previous + difference
-      );
+      setScrollRotation((previous) => previous + difference);
 
-      lastScrollY =
-        currentScrollY;
+      lastScrollY = currentScrollY;
     };
 
-    window.addEventListener(
-      "scroll",
-      handleScroll
-    );
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [mounted]);
 
   // ============================
-  // DON'T RENDER GEARS
-  // UNTIL CLIENT IS READY
+  // DON'T RENDER UNTIL CLIENT
+  // IS READY
   // ============================
 
   if (!mounted) {
+    return null;
+  }
+
+  // ============================
+  // REMOVE GEAR TRAIN ON MOBILE
+  // ============================
+
+  if (screenWidth < 640) {
     return null;
   }
 
@@ -110,9 +96,7 @@ export default function GearTrain() {
 
   let trainScale = 1;
 
-  if (screenWidth < 640) {
-    trainScale = 0.45;
-  } else if (screenWidth < 1024) {
+  if (screenWidth < 1024) {
     trainScale = 0.75;
   } else {
     trainScale = 1;
@@ -122,11 +106,9 @@ export default function GearTrain() {
   // GEAR RADII
   // ============================
 
-  const largeRadius =
-    getGearRadius(LARGE_TEETH);
+  const largeRadius = getGearRadius(LARGE_TEETH);
 
-  const smallRadius =
-    getGearRadius(SMALL_TEETH);
+  const smallRadius = getGearRadius(SMALL_TEETH);
 
   // ============================
   // GEAR SPACING
@@ -145,10 +127,8 @@ export default function GearTrain() {
     Math.sqrt(
       Math.max(
         0,
-        centerDistance *
-          centerDistance -
-          horizontalOffset *
-            horizontalOffset
+        centerDistance * centerDistance -
+          horizontalOffset * horizontalOffset
       )
     );
 
@@ -159,8 +139,7 @@ export default function GearTrain() {
   const numberOfGears =
     Math.ceil(
       screenHeight /
-        (verticalDistance *
-          trainScale)
+        (verticalDistance * trainScale)
     ) + 5;
 
   // ============================
@@ -169,9 +148,7 @@ export default function GearTrain() {
 
   let edgeOffset = 50;
 
-  if (screenWidth < 640) {
-    edgeOffset = 5;
-  } else if (screenWidth < 1024) {
+  if (screenWidth < 1024) {
     edgeOffset = 30;
   }
 
@@ -185,28 +162,24 @@ export default function GearTrain() {
     return Array.from({
       length: numberOfGears,
     }).map((_, i) => {
-      const isLarge =
-        i % 2 === 0;
+      const isLarge = i % 2 === 0;
 
-      const teeth =
-        isLarge
-          ? LARGE_TEETH
-          : SMALL_TEETH;
+      const teeth = isLarge
+        ? LARGE_TEETH
+        : SMALL_TEETH;
 
-      const radius =
-        isLarge
-          ? largeRadius
-          : smallRadius;
+      const radius = isLarge
+        ? largeRadius
+        : smallRadius;
 
       // ------------------------
       // CENTER
       // ------------------------
 
-      const centerX =
-        isLarge
-          ? largeRadius
-          : largeRadius +
-            horizontalOffset;
+      const centerX = isLarge
+        ? largeRadius
+        : largeRadius +
+          horizontalOffset;
 
       const centerY =
         radius +
@@ -226,28 +199,25 @@ export default function GearTrain() {
       // ROTATION
       // ------------------------
 
-      const rotation =
-        isLarge
-          ? scrollRotation
-          : -scrollRotation * 2;
+      const rotation = isLarge
+        ? scrollRotation
+        : -scrollRotation * 2;
 
       // ------------------------
       // PHASE
       // ------------------------
 
-      const phase =
-        isLarge
-          ? 0
-          : 180 / SMALL_TEETH;
+      const phase = isLarge
+        ? 0
+        : 180 / SMALL_TEETH;
 
       // ------------------------
       // SCALE
       // ------------------------
 
-      const gearScale =
-        isLarge
-          ? LARGE_GEAR_SCALE
-          : 1;
+      const gearScale = isLarge
+        ? LARGE_GEAR_SCALE
+        : 1;
 
       return (
         <div
@@ -264,11 +234,9 @@ export default function GearTrain() {
                 ? `${edgeOffset + left * trainScale}px`
                 : undefined,
 
-            top:
-              `${top * trainScale}px`,
+            top: `${top * trainScale}px`,
 
-            transform:
-              `scale(${trainScale})`,
+            transform: `scale(${trainScale})`,
 
             transformOrigin:
               "center center",
@@ -276,9 +244,7 @@ export default function GearTrain() {
         >
           <Gear
             teeth={teeth}
-            rotation={
-              rotation + phase
-            }
+            rotation={rotation + phase}
             scale={gearScale}
           />
         </div>
