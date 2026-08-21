@@ -114,6 +114,32 @@ export default function Home() {
         <div className="mt-10 grid gap-6 sm:mt-12 md:grid-cols-2 lg:mt-6">
 
           <Link
+            href="/projects/lsm"
+            className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-10"
+          >
+            <img
+              src="/lsm.jpeg"
+              alt="LSM"
+              className="mx-auto mb-4 w-full max-w-[300px] object-cover shadow-2xl"
+            />
+
+            <h3 className="text-2xl font-semibold text-[var(--accent)]">
+              Laser Scan Micrometer Automation
+            </h3>
+
+            <p className="mt-4 leading-relaxed text-zinc-400">
+              Automated a LSM measurement workflow to streamline precision measurement and data collection. 
+              Developed a Python script to communicate with the instrument over serial communication, capture measurement 
+              readings, and automatically export results to Excel template, simplifying the 
+              workflow for future technicians.
+            </p>
+
+            <p className="mt-4 leading-relaxed text-zinc-400">
+              Skills: Python · Serial Communication · Excel Automation · Precision Metrology
+            </p>
+          </Link>
+
+          <Link
             href="/projects/project-1"
             className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-10"
           >
