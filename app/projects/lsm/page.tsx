@@ -1375,10 +1375,6 @@ if __name__ == "__main__":
 
       {/* Main Content */}
       <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-10">
-        <p className="text-center text-2xl">
-          !!!!!PAGE STILL IN DEVELOPMENT!!!!!
-        </p>
-
         <h1 className="mt-4 text-4xl font-bold tracking-tight text-[var(--accent)] sm:text-5xl">
           Laser Scan Micrometer Automation
         </h1>
@@ -1611,7 +1607,7 @@ if __name__ == "__main__":
             playsInline
             className="mx-auto h-auto w-full max-w-[350px] object-contain shadow-2xl"
           />
-          
+
           <p className="flex-1 text-base leading-7 text-white sm:text-xl">
             For the biggest issue of Python not being allowed to run on the main
             workplace computers, after researching options, I discovered that I
