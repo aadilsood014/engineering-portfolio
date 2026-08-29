@@ -8,6 +8,7 @@ export default function Project1() {
             PROJECT
           </span>
         </div>
+
         <div className="flex items-center gap-3">
           <a
             href="/"
@@ -74,28 +75,23 @@ export default function Project1() {
             wanted to learn from the absolute basics. So I began using my
             understanding of basic parallel and series connections to create
             simple AND, OR, inverter, and NAND logic gates.
-
             <br />
             <br />
-
             After practicing with the fundamental logic gates, I recognized how
             I should approach this project:
-
             <ol className="mt-6 space-y-4 text-base leading-7 text-white sm:text-xl">
               <li className="flex gap-2">
-                <span className="shrink-0">1. </span>
+                <span className="shrink-0">1.</span>
                 <span>
                   Design the logic gate system for each bit of the adder.
                 </span>
               </li>
-
               <li className="flex gap-2">
-                <span className="shrink-0">2. </span>
+                <span className="shrink-0">2.</span>
                 <span>Design the individual circuits for each gate.</span>
               </li>
-
               <li className="flex gap-2">
-                <span className="shrink-0">3. </span>
+                <span className="shrink-0">3.</span>
                 <span>Create the full adder circuit on breadboards.</span>
               </li>
             </ol>
@@ -155,10 +151,8 @@ export default function Project1() {
           used to design, visualize, and test electronic circuits in real time.
           The best part was that it provided interactive analysis of voltages,
           currents, and component behaviour.
-
           <br />
           <br />
-
           In order to determine which gates to specifically use I created an
           Excel sheet to visualize the input and output bits for the binary
           addition to recognize any patterns for which logic gates to utilize
@@ -234,10 +228,10 @@ export default function Project1() {
           </a>
           ). The AND gate was essentially just a series circuit of two
           transistors (both transistors need current for current to flow through
-          the gate) and the OR gate was a parallel circuit of two transistors (at
-          least one needs current supplied for the gate to be on). The XOR gate
-          took more thinking, but it was essentially just a combination of OR
-          and AND, as an AND output is inverted and then ANDed with the OR
+          the gate) and the OR gate was a parallel circuit of two transistors
+          (at least one needs current supplied for the gate to be on). The XOR
+          gate took more thinking, but it was essentially just a combination of
+          OR and AND, as an AND output is inverted and then ANDed with the OR
           output:{" "}
           <span className="font-serif italic">
             A⊕B=(A∨B)∧¬(A∧B)
@@ -251,7 +245,7 @@ export default function Project1() {
           muted
           loop
           playsInline
-          className="mx-auto mt-6 max-w-[700px] object-cover shadow-2xl"
+          className="mx-auto mt-6 h-auto w-full max-w-[700px] object-contain shadow-2xl"
         />
 
         <div className="mt-14 flex flex-col gap-8 md:flex-row md:items-center">
@@ -259,81 +253,106 @@ export default function Project1() {
             src="/oneBit.mp4"
             playsInline
             controls
-            className="mx-auto max-w-[300px] object-contain shadow-2xl"
+            className="mx-auto h-auto w-full max-w-[300px] object-contain shadow-2xl"
           />
 
           <div className="flex-1">
             <p className="text-base leading-7 text-white sm:text-xl">
               <span className="underline">Building the Adder</span>
-              : I followed my Falstad schematics to create my adder on breadboards. I used two 4 position DIP switches to
-              represent the two numbers in binary as well as LED&apos;s to indicate my total binary sum. I attempted to be efficient
-              with the space I took up on the breadboard while not making it look like a total confusing mess of wires and
-              transistors (as you can guess that did not work out and troubleshooting was a nightmare). I was able to create my
-              first bit full adder with relative ease, displayed in the video on the left.
-
+              : I followed my Falstad schematics to create my adder on
+              breadboards. I used two 4 position DIP switches to represent the
+              two numbers in binary as well as LED&apos;s to indicate my total
+              binary sum. I attempted to be efficient with the space I took up
+              on the breadboard while not making it look like a total confusing
+              mess of wires and transistors (as you can guess that did not work
+              out and troubleshooting was a nightmare). I was able to create my
+              first bit full adder with relative ease, displayed in the video
+              on the left.
               <br />
               <br />
-
-              The real issues started showing up when I tried using the carry bit as input into the next XOR gate along with the
-              sum of the current bit. Unfortunately when connecting a singular transistor network after the last transistor&apos;s
-              emitter to the collector of the first transistor of the next network, the secondary network can affect the results
-              of the first which is not ideal. The desired result is the first network&apos;s outputs to be independent and the second
-              network to be dependent on the first. No matter how many intermediary transistors used, this issue persists.
-              Unfortunately I was unaware of this and spent a few days just trying to troubleshoot, rewire, and rebuild.
+              The real issues started showing up when I tried using the carry
+              bit as input into the next XOR gate along with the sum of the
+              current bit. Unfortunately when connecting a singular transistor
+              network after the last transistor&apos;s emitter to the collector
+              of the first transistor of the next network, the secondary
+              network can affect the results of the first which is not ideal.
+              The desired result is the first network&apos;s outputs to be
+              independent and the second network to be dependent on the first.
+              No matter how many intermediary transistors used, this issue
+              persists. Unfortunately I was unaware of this and spent a few
+              days just trying to troubleshoot, rewire, and rebuild.
             </p>
           </div>
         </div>
 
         <p className="mt-8 text-base leading-7 text-white sm:text-xl">
-          After a lot of frustration I decided to take a step back and iterate by creating a Falstad transistor network for 
-          an XOR gate (sum of current bits) and an AND gate&apos;s (previous carry bit) outputs being the inputs of another XOR gate.
-          By using LED&apos;s as indicators for each gate, I discovered the dependency issue. After some research, I found my solution
-          in a PNP transistor. So far, I had only been using NPN transistors for my project. A PNP transistor works in the opposite manner to an NPN transistor.: It turns on when its base is driven lower than its emitter. So, an intermediary PNP transistor
-          acts as a buffer by providing current gain, preventing the second gate from loading down and interfering with the 
-          output of the first gate.
-
+          After a lot of frustration I decided to take a step back and iterate
+          by creating a Falstad transistor network for an XOR gate (sum of
+          current bits) and an AND gate&apos;s (previous carry bit) outputs
+          being the inputs of another XOR gate. By using LED&apos;s as
+          indicators for each gate, I discovered the dependency issue. After
+          some research, I found my solution in a PNP transistor. So far, I
+          had only been using NPN transistors for my project. A PNP transistor
+          works in the opposite manner to an NPN transistor.: It turns on when
+          its base is driven lower than its emitter. So, an intermediary PNP
+          transistor acts as a buffer by providing current gain, preventing the
+          second gate from loading down and interfering with the output of the
+          first gate.
           <br />
           <br />
-
-          I decided against directly wiring this added buffer along with rebuilding the entire circuit immediately, as I knew
-          it would be a very confusing process which would likely lead to a variety of errors which also needed to be troubleshooted.
-          Thus, I decided first to implement my solution into Falstad by creating compounding transistor networks that took the
-          outputs of certain gates as the inputs of another. The one below shows an XOR gate and an AND gate being the inputs
-          for a secondary XOR gate (current switch sum input and previous carry bit input into current bit sum value).
+          I decided against directly wiring this added buffer along with
+          rebuilding the entire circuit immediately, as I knew it would be a
+          very confusing process which would likely lead to a variety of errors
+          which also needed to be troubleshooted. Thus, I decided first to
+          implement my solution into Falstad by creating compounding transistor
+          networks that took the outputs of certain gates as the inputs of
+          another. The one below shows an XOR gate and an AND gate being the
+          inputs for a secondary XOR gate (current switch sum input and previous
+          carry bit input into current bit sum value).
         </p>
 
         <img
           src="/compoundLogic.png"
           alt="compoundLogicNetwork"
-          className="mx-auto mt-6 max-w-[1000px] shadow-2xl"
+          className="mx-auto mt-6 w-full max-w-[1000px] object-contain shadow-2xl"
         />
 
         <p className="mt-8 text-base leading-7 text-white sm:text-xl">
-          This prototyping made my task quite a bit easier but I still wasn&apos;t ready for the amount of time and frustration 
-          that wiring four bits of logic would cause. After lots of troubleshooting, restarting, and losing track of transistors,
-          I was finally able to achieve the desired result: A functional fully-transistor based network four bit adder! A
-          demonstration is shown below, adding 11 + 9 = 20 (in binary: <span className="font-mono">1011 + 1001 = 10100</span>).
+          This prototyping made my task quite a bit easier but I still
+          wasn&apos;t ready for the amount of time and frustration that wiring
+          four bits of logic would cause. After lots of troubleshooting,
+          restarting, and losing track of transistors, I was finally able to
+          achieve the desired result: A functional fully-transistor based
+          network four bit adder! A demonstration is shown below, adding 11 + 9
+          = 20 (in binary:{" "}
+          <span className="font-mono">1011 + 1001 = 10100</span>).
         </p>
 
         <video
           src="/adderDemonstration.mp4"
           playsInline
           controls
-          className="mx-auto mt-6 max-w-[700px] shadow-2xl"
+          className="mx-auto mt-6 h-auto w-full max-w-[700px] object-contain shadow-2xl"
         />
 
         {/* Conclusion & Reflection */}
         <p className="mt-14 text-base leading-7 text-white sm:text-xl">
           <span className="underline">Conclusion & Reflection</span>
-          : In the end, I was able to successfully design and build a functional four-bit binary adder entirely from 
-          discrete transistor-based logic gates. The completed system combined the logic gate designs I had developed, 
-          the Falstad simulations that guided their implementation, and the iterative troubleshooting required to 
-          translate the design from simulation to physical hardware. Beyond demonstrating binary addition, the project 
-          gave me a much deeper understanding of how transistors can be combined to create increasingly complex 
-          computational systems. Most importantly, working through challenges such as gate loading and signal buffering 
-          reinforced the importance of prototyping, testing, and refining a design when theoretical behavior does not 
-          perfectly match real-world implementation. Through this project, I not only built a working calculator circuit 
-          but also gained valuable experience in digital logic design, circuit analysis, and hardware debugging.
+          : In the end, I was able to successfully design and build a
+          functional four-bit binary adder entirely from discrete
+          transistor-based logic gates. The completed system combined the logic
+          gate designs I had developed, the Falstad simulations that guided
+          their implementation, and the iterative troubleshooting required to
+          translate the design from simulation to physical hardware. Beyond
+          demonstrating binary addition, the project gave me a much deeper
+          understanding of how transistors can be combined to create
+          increasingly complex computational systems. Most importantly,
+          working through challenges such as gate loading and signal buffering
+          reinforced the importance of prototyping, testing, and refining a
+          design when theoretical behavior does not perfectly match real-world
+          implementation. Through this project, I not only built a working
+          calculator circuit but also gained valuable experience in digital
+          logic design, circuit analysis, and hardware debugging.
         </p>
 
         {/* Return to Top */}
