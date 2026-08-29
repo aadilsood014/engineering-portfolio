@@ -102,7 +102,7 @@ export default function Project1() {
           </div>
 
           <video
-            src="/inverter.mov"
+            src="/inverter.mp4"
             autoPlay
             muted
             loop
@@ -111,7 +111,7 @@ export default function Project1() {
           />
 
           <video
-            src="/nand.mov"
+            src="/nand.mp4"
             autoPlay
             muted
             loop
