@@ -114,6 +114,32 @@ export default function Home() {
         <div className="mt-10 grid gap-6 sm:mt-12 md:grid-cols-2 lg:mt-6">
 
           <Link
+            href="/projects/fourBit"
+            className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-10"
+          >
+            <img
+              src="/4main.jpeg"
+              alt="4Bit"
+              className="mx-auto mb-4 w-full max-w-[300px] object-cover shadow-2xl"
+            />
+
+            <h3 className="text-2xl font-semibold text-[var(--accent)]">
+              4-Bit Transistor Network Binary Adder
+            </h3>
+
+            <p className="mt-4 leading-relaxed text-zinc-400">
+                Designed and built a functional 4-bit binary adder using discrete transistor-based 
+                logic gates on a breadboard. Prototyped and tested the transistor logic circuits using Falstad circuit simulation.
+                Implemented XOR and AND logic from individual NPN and PNP transistors and combined them into full-adder circuits 
+                to perform multi-bit binary addition. 
+            </p>
+
+            <p className="mt-4 leading-relaxed text-zinc-400">
+              Skills: Digital Logic · Transistor Circuits · Boolean Logic · Falstad · Breadboard Prototyping
+            </p>
+          </Link>
+
+          <Link
             href="/projects/lsm"
             className="project-card block rounded-xl border border-zinc-800 bg-zinc-900 p-6 sm:p-10"
           >
