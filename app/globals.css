@@ -1,13 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #080D12;
+  --background: #0A0912;
   --foreground: #ededed;
+  --surface: #13111C;
+  --muted: #A1A1B5;
+  --accent: #8B7CF6;
+  --accent-secondary: #22D3EE;
+  --accent-glow: rgba(139, 124, 246, 0.35);
+  --accent-secondary-glow: rgba(34, 211, 238, 0.25);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -15,32 +25,100 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ambient glow blobs, fixed behind everything (z-index -1, sits behind the gear train at z-index 0) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(600px circle at 15% 20%, var(--accent-glow), transparent 60%),
+    radial-gradient(500px circle at 85% 60%, var(--accent-secondary-glow), transparent 60%),
+    radial-gradient(700px circle at 50% 100%, rgba(139, 124, 246, 0.12), transparent 70%);
+}
+
+/* Faint grid texture */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(139, 124, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 124, 246, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 .project-button {
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .project-button:hover {
-  background-color: #8B7CF6;
+  background-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
 }
 
 .project-card {
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  background: rgba(19, 17, 28, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 124, 246, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  border-color: #8B7CF6;
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 0 40px var(--accent-glow), 0 0 80px var(--accent-secondary-glow);
 }
 
-:root {
-  --accent: #8B7CF6;
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mono-label {
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: 0.15em;
+}
+
+.glow-border {
+  box-shadow: 0 0 0 1px rgba(139, 124, 246, 0.3), 0 0 24px var(--accent-glow);
 }
 
 .numbered-list {
   padding-left: 20px;
-  /* Use 'decimal' for standard 1, 2, 3 numbering */
-  list-style-type: decimal; 
+  list-style-type: decimal;
 }
+
+/* Entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.55s; }

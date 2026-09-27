@@ -1354,19 +1354,19 @@ if __name__ == "__main__":
 `;
 
   return (
-    <main id="top" className="min-h-screen bg-[#080D12]">
+    <main id="top" className="min-h-screen">
       {/* Navbar */}
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-8 md:px-10">
         <div className="flex items-center">
-          <span className="text-xs font-medium tracking-[0.2em] text-zinc-400 sm:text-sm">
+          <span className="mono-label text-xs font-medium text-muted sm:text-sm">
             PROJECT
           </span>
         </div>
 
         <div className="flex items-center gap-3">
-          <a
+                    <a
             href="/"
-            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950"
+            className="project-button inline-block rounded-lg border border-[var(--accent)]/50 px-3 py-2 text-sm font-medium text-[var(--accent)] hover:text-white"
           >
             Home
           </a>
@@ -1375,12 +1375,16 @@ if __name__ == "__main__":
 
       {/* Main Content */}
       <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-10">
-        <h1 className="mt-4 text-4xl font-bold tracking-tight text-[var(--accent)] sm:text-5xl">
+        <p className="animate-in mono-label text-xs text-[var(--accent-secondary)]">
+          / PROJECT
+        </p>
+
+        <h1 className="animate-in delay-1 gradient-text mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
           Laser Scan Micrometer Automation
         </h1>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Purpose</span>: To design and implement
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Purpose</span>: To design and implement
           an automated measurement system for a Mitutoyo Laser Scan Micrometer
           (LSM), enabling technicians to efficiently capture and record precise
           pin gauge measurements directly into an Excel template while reducing
@@ -1391,11 +1395,11 @@ if __name__ == "__main__":
           <img
             src="/lsm.jpeg"
             alt="LSM"
-            className="mx-auto mb-4 mt-6 h-auto w-full max-w-[400px] object-contain shadow-2xl"
+            className="glow-border mx-auto mb-4 mt-6 h-auto w-full max-w-[400px] object-contain"
           />
 
-          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
-            <span className="underline">Understanding the task</span>: After
+          <p className="flex-1 text-base leading-7 text-muted sm:text-xl">
+            <span className="text-[var(--accent-secondary)] underline">Understanding the task</span>: After
             seeking out an opportunity to contribute to a technical project, I
             was introduced to an existing challenge the team had been
             exploring: automating data collection from a Laser Scan Micrometer.
@@ -1412,14 +1416,14 @@ if __name__ == "__main__":
           </p>
         </div>
 
-        <ol className="mt-6 space-y-4 text-base leading-7 text-white sm:text-xl">
+        <ol className="mt-6 space-y-4 text-base leading-7 text-muted sm:text-xl">
           <li className="flex gap-2">
-            <span className="shrink-0">Step 1 - </span>
+            <span className="shrink-0 text-[var(--accent)]">Step 1 - </span>
             <span>Learn the device&apos;s communication commands.</span>
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Step 2 - </span>
+            <span className="shrink-0 text-[var(--accent)]">Step 2 - </span>
             <span>
               Use a Python script (ideal for serial communication and Excel
               data transfer) to communicate with the device and understand how
@@ -1428,12 +1432,12 @@ if __name__ == "__main__":
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Step 3 - </span>
+            <span className="shrink-0 text-[var(--accent)]">Step 3 - </span>
             <span>Send the data to the Excel template.</span>
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Step 4 - </span>
+            <span className="shrink-0 text-[var(--accent)]">Step 4 - </span>
             <span>
               Modify the template to average the raw data for the calibration
               certificate.
@@ -1441,7 +1445,7 @@ if __name__ == "__main__":
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Step 5 - </span>
+            <span className="shrink-0 text-[var(--accent)]">Step 5 - </span>
             <span>
               Ensure the program is easily usable for technicians with minimal
               programming experience.
@@ -1449,8 +1453,8 @@ if __name__ == "__main__":
           </li>
         </ol>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Tools and Equipment</span>: I was
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Tools and Equipment</span>: I was
           permitted a designated development laptop with Python installed for
           the project. However, the technicians&apos; workstations did not have
           Python installed and could not be configured to run the scripts. This
@@ -1461,8 +1465,8 @@ if __name__ == "__main__":
         </p>
 
         <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-center">
-          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
-            <span className="underline">Initial Tests</span>: My first test was
+          <p className="flex-1 text-base leading-7 text-muted sm:text-xl">
+            <span className="text-[var(--accent-secondary)] underline">Initial Tests</span>: My first test was
             to learn everything I could about the instrument&apos;s
             communication interface. The device was a Mitutoyo Laser Scan
             Micrometer (LSM) 9506, and through studying its user manual, I
@@ -1483,11 +1487,11 @@ if __name__ == "__main__":
           <img
             src="/manual.png"
             alt="LSM user manual"
-            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
+            className="glow-border mx-auto w-full max-w-[300px] object-cover sm:max-w-[350px] md:mx-0"
           />
         </div>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
           Using the Python script below, I conducted a basic communication test
           by sending a measurement command to the LSM and reading its response
           through the serial interface. The successful test returned measurement
@@ -1498,10 +1502,10 @@ if __name__ == "__main__":
 
         {/* Expandable Code Section */}
         <div className="mt-8 flex justify-center">
-          <div className="w-full max-w-4xl overflow-hidden rounded-xl border border-[#8B7CF6]/25 bg-[#11101A]">
+          <div className="project-card w-full max-w-4xl overflow-hidden rounded-xl">
             {/* Code Header */}
-            <div className="border-b border-[#8B7CF6]/15 bg-[#171522] px-4 py-3 sm:px-7">
-              <span className="font-mono text-sm text-[#A69CF8]">
+            <div className="border-b border-[var(--accent)]/15 bg-[var(--surface)] px-4 py-3 sm:px-7">
+              <span className="mono-label text-sm text-[var(--accent-secondary)]">
                 lsm_test.py
               </span>
             </div>
@@ -1519,15 +1523,15 @@ if __name__ == "__main__":
               </pre>
 
               {!isCodeExpanded && (
-                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#11101A] to-transparent" />
+                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--surface)] to-transparent" />
               )}
             </div>
 
             {/* Expand Button */}
-            <div className="border-t border-[#8B7CF6]/15 bg-[#171522] p-3 text-center">
+            <div className="border-t border-[var(--accent)]/15 bg-[var(--surface)] p-3 text-center">
               <button
                 onClick={() => setIsCodeExpanded(!isCodeExpanded)}
-                className="rounded-lg px-5 py-2 text-sm font-medium text-[#A69CF8] transition hover:bg-[#8B7CF6]/10 hover:text-white"
+                className="rounded-lg px-5 py-2 text-sm font-medium text-[var(--accent-secondary)] transition hover:bg-[var(--accent)]/10 hover:text-white"
               >
                 {isCodeExpanded ? "Hide Code ↑" : "View Full Code ↓"}
               </button>
@@ -1535,7 +1539,7 @@ if __name__ == "__main__":
           </div>
         </div>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
           I ran into some minor issues such as drivers not being installed, but
           after some troubleshooting, I was able to get the desired reading to
           my terminal. I was then able to move on to working out the Excel part
@@ -1559,11 +1563,11 @@ if __name__ == "__main__":
           <img
             src="/template.jpeg"
             alt="Excel template"
-            className="mx-auto mb-4 mt-6 h-auto w-full max-w-[600px] object-contain shadow-2xl"
+            className="glow-border mx-auto mb-4 mt-6 h-auto w-full max-w-[600px] object-contain"
           />
 
-          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
-            <span className="underline">Improving the Workflow</span>: After
+          <p className="flex-1 text-base leading-7 text-muted sm:text-xl">
+            <span className="text-[var(--accent-secondary)] underline">Improving the Workflow</span>: After
             conducting my test scripts, I realized I would have to tackle the
             actual obstacles that would prevent the code from being accessible
             and easily usable by all technicians. One of the smaller issues
@@ -1578,7 +1582,7 @@ if __name__ == "__main__":
         </div>
 
         <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-center">
-          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
+          <p className="flex-1 text-base leading-7 text-muted sm:text-xl">
             Beyond this, I wanted to tackle the user interface. So far, I was
             using the keyboard to run the LSM commands, with the Esc key being
             used to exit the program, but I knew this was temporary as the user
@@ -1593,7 +1597,7 @@ if __name__ == "__main__":
           <img
             src="/tray.png"
             alt="LSM tray icon"
-            className="mx-auto mb-4 mt-6 h-auto w-full max-w-[400px] object-contain shadow-2xl"
+            className="glow-border mx-auto mb-4 mt-6 h-auto w-full max-w-[400px] object-contain"
           />
         </div>
 
@@ -1605,10 +1609,10 @@ if __name__ == "__main__":
             muted
             loop
             playsInline
-            className="mx-auto h-auto w-full max-w-[350px] object-contain shadow-2xl"
+            className="glow-border mx-auto h-auto w-full max-w-[350px] object-contain"
           />
 
-          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
+          <p className="flex-1 text-base leading-7 text-muted sm:text-xl">
             For the biggest issue of Python not being allowed to run on the main
             workplace computers, after researching options, I discovered that I
             could use the PyInstaller library to convert the script into an .exe
@@ -1617,11 +1621,11 @@ if __name__ == "__main__":
             after a software update or restart, the program would be automatically
             running in the background, making it very user-friendly and minimizing
             manual intervention. At this point, I want to reference{" "}
-            <a
+                        <a
               href="https://pypi.org/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline text-[var(--accent)] hover:text-white"
+              className="underline text-[var(--accent-secondary)] hover:text-white"
             >
               PyPI
             </a>{" "}
@@ -1633,7 +1637,7 @@ if __name__ == "__main__":
             <br />
             <br />
 
-            <span className="underline">Conclusion & Reflection</span>: This
+            <span className="text-[var(--accent-secondary)] underline">Conclusion & Reflection</span>: This
             project allowed me to tackle a real workplace problem while developing
             skills in serial communication, Python, Excel automation, and software
             deployment. Working within the technicians&apos; existing workflow
@@ -1646,10 +1650,10 @@ if __name__ == "__main__":
 
         {/* Final Python Code */}
         <div className="mt-10 flex justify-center">
-          <div className="w-full max-w-4xl overflow-hidden rounded-xl border border-[#8B7CF6]/25 bg-[#11101A]">
+          <div className="project-card w-full max-w-4xl overflow-hidden rounded-xl">
             {/* Code Header */}
-            <div className="border-b border-[#8B7CF6]/15 bg-[#171522] px-4 py-3 sm:px-7">
-              <span className="font-mono text-sm text-[#A69CF8]">
+            <div className="border-b border-[var(--accent)]/15 bg-[var(--surface)] px-4 py-3 sm:px-7">
+              <span className="mono-label text-sm text-[var(--accent-secondary)]">
                 lsm_automation.py
               </span>
             </div>
@@ -1667,17 +1671,17 @@ if __name__ == "__main__":
               </pre>
 
               {!isFinalCodeExpanded && (
-                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#11101A] to-transparent" />
+                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--surface)] to-transparent" />
               )}
             </div>
 
             {/* Expand Button */}
-            <div className="border-t border-[#8B7CF6]/15 bg-[#171522] p-3 text-center">
+            <div className="border-t border-[var(--accent)]/15 bg-[var(--surface)] p-3 text-center">
               <button
                 onClick={() =>
                   setIsFinalCodeExpanded(!isFinalCodeExpanded)
                 }
-                className="rounded-lg px-5 py-2 text-sm font-medium text-[#A69CF8] transition hover:bg-[#8B7CF6]/10 hover:text-white"
+                className="rounded-lg px-5 py-2 text-sm font-medium text-[var(--accent-secondary)] transition hover:bg-[var(--accent)]/10 hover:text-white"
               >
                 {isFinalCodeExpanded
                   ? "Hide Final Code ↑"
@@ -1689,9 +1693,9 @@ if __name__ == "__main__":
 
         {/* Return to Top */}
         <div className="mt-16 flex justify-center pb-12">
-          <a
+                    <a
             href="#top"
-            className="project-button rounded-lg bg-white px-6 py-3 font-medium text-zinc-950"
+            className="project-button rounded-lg border border-[var(--accent)]/50 px-6 py-3 font-medium text-[var(--accent)] hover:text-white"
           >
             Return to Top ↑
           </a>

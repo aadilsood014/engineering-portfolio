@@ -81,11 +81,11 @@ void loop() {
 `;
 
   return (
-    <main id="top" className="min-h-screen bg-[#080D12]">
+    <main id="top" className="min-h-screen">
       {/* Navbar */}
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-8 md:px-10">
         <div className="flex items-center">
-          <span className="text-xs font-medium tracking-[0.2em] text-zinc-400 sm:text-sm">
+          <span className="mono-label text-xs font-medium text-muted sm:text-sm">
             PROJECT
           </span>
         </div>
@@ -93,7 +93,7 @@ void loop() {
         <div className="flex items-center gap-3">
           <a
             href="/"
-            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950"
+            className="project-button inline-block rounded-lg border border-[var(--accent)]/50 px-3 py-2 text-sm font-medium text-[var(--accent)] hover:text-white"
           >
             Home
           </a>
@@ -103,19 +103,23 @@ void loop() {
       {/* Main Content */}
       <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-10">
 
-        <h1 className="mt-4 text-4xl font-bold tracking-tight text-[var(--accent)] sm:text-5xl">
+        <p className="animate-in mono-label text-xs text-[var(--accent-secondary)]">
+          / PROJECT
+        </p>
+
+        <h1 className="animate-in delay-1 gradient-text mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
           Automated Mechanical Claw
         </h1>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Purpose</span>
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Purpose</span>
           : To design and build a fully autonomous claw, which has the ability
           to pick up and transfer numerous objects varying in size, shape, and
           weight for a design competition in my UBC APSC 101 Class.
         </p>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Understanding the task</span>
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Understanding the task</span>
           : I worked with my APSC group to take on the challenge. We had to
           create an autonomous claw which could detect when an object was
           underneath it, pick it up and automatically drop it when lowered
@@ -124,16 +128,16 @@ void loop() {
           obstacles:
         </p>
 
-        <ol className="mt-6 space-y-4 text-base leading-7 text-white sm:text-xl">
+        <ol className="mt-6 space-y-4 text-base leading-7 text-muted sm:text-xl">
           <li className="flex gap-2">
-            <span className="shrink-0">Round 1 - </span>
+            <span className="shrink-0 text-[var(--accent)]">Round 1 - </span>
             <span>
               A sequence of random objects of varying shapes and sizes.
             </span>
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Round 2 - </span>
+            <span className="shrink-0 text-[var(--accent)]">Round 2 - </span>
             <span>
               A batch of identically shaped blocks with the goal of picking up
               as many as possible.
@@ -141,16 +145,16 @@ void loop() {
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Round 3 - </span>
+            <span className="shrink-0 text-[var(--accent)]">Round 3 - </span>
             <span>
               Bulk round with a variety of larger objects that can be lifted up
-              by collaborating with other teams’ claws within the same section.
+              by collaborating with other teams' claws within the same section.
             </span>
           </li>
         </ol>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Tools and Equipment</span>
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Tools and Equipment</span>
           : We were permitted to use Arduino electronics limited to one servo
           motor, one sonar sensor, one microcontroller board, and no external
           power modules. Additionally, we were given six sheets of 15x15 cm
@@ -163,11 +167,11 @@ void loop() {
           <img
             src="/brainstorm.png"
             alt="Brainstorm"
-            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
+            className="glow-border mx-auto w-full max-w-[300px] object-cover sm:max-w-[350px] md:mx-0"
           />
 
-          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
-            <span className="underline">Brainstorming</span>
+          <p className="flex-1 text-base leading-7 text-muted sm:text-xl">
+            <span className="text-[var(--accent-secondary)] underline">Brainstorming</span>
             : Each team member came up with unique ideas to tackle the problem,
             mainly considering how to transfer the fixed rotational motion of
             the servo motor into opening and closing a claw.
@@ -187,7 +191,7 @@ void loop() {
 
         {/* TinkerCAD */}
         <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-center">
-          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
+          <p className="flex-1 text-base leading-7 text-muted sm:text-xl">
             However, this was only half of the task, as we needed to figure out
             how to make this system autonomous. Thus, I first started playing
             around with TinkerCAD to see how a sonar sensor could interact with
@@ -197,11 +201,11 @@ void loop() {
           <img
             src="/tinker.png"
             alt="TinkerCAD Setup"
-            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
+            className="glow-border mx-auto w-full max-w-[300px] object-cover sm:max-w-[350px] md:mx-0"
           />
         </div>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
           I setup a threshold distance that the sonar sensor would detect and
           rotate the servo accordingly. However, this was not the ideal
           solution as the servo would toggle between the two positions as I
@@ -215,11 +219,11 @@ void loop() {
 
         {/* Expandable Code Section */}
         <div className="mt-8 flex justify-center">
-          <div className="w-full max-w-4xl overflow-hidden rounded-xl border border-[#8B7CF6]/25 bg-[#11101A]">
+          <div className="project-card w-full max-w-4xl overflow-hidden rounded-xl">
 
             {/* Code Header */}
-            <div className="border-b border-[#8B7CF6]/15 bg-[#171522] px-4 py-3 sm:px-7">
-              <span className="font-mono text-sm text-[#A69CF8]">
+            <div className="border-b border-[var(--accent)]/15 bg-[var(--surface)] px-4 py-3 sm:px-7">
+              <span className="mono-label text-sm text-[var(--accent-secondary)]">
                 Arduino.ino
               </span>
             </div>
@@ -238,15 +242,15 @@ void loop() {
 
               {/* Fade effect */}
               {!isCodeExpanded && (
-                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#11101A] to-transparent" />
+                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--surface)] to-transparent" />
               )}
             </div>
 
             {/* Expand Button */}
-            <div className="border-t border-[#8B7CF6]/15 bg-[#171522] p-3 text-center">
+            <div className="border-t border-[var(--accent)]/15 bg-[var(--surface)] p-3 text-center">
               <button
                 onClick={() => setIsCodeExpanded(!isCodeExpanded)}
-                className="rounded-lg px-5 py-2 text-sm font-medium text-[#A69CF8] transition hover:bg-[#8B7CF6]/10 hover:text-white"
+                className="rounded-lg px-5 py-2 text-sm font-medium text-[var(--accent-secondary)] transition hover:bg-[var(--accent)]/10 hover:text-white"
               >
                 {isCodeExpanded ? "Hide Code ↑" : "View Full Code ↓"}
               </button>
@@ -255,7 +259,7 @@ void loop() {
           </div>
         </div>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
           This allowed me to easily change the threshold value to the height of
           the opened claw so when it touched the ground it would close up and
           the only way it would open and drop an object if it touched the ground
@@ -264,8 +268,8 @@ void loop() {
           the threshold value.
         </p>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Implementing the solution</span>
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Implementing the solution</span>
           : Before we touched the actual sheet metal, we made detailed
           orthographic drawings and circuit schematics which would outline
           exactly what steps needed to be taken to implement our idea. Some of
@@ -277,13 +281,13 @@ void loop() {
           <img
             src="/ortho1.jpg"
             alt="Ortho1"
-            className="mx-auto w-full object-cover shadow-2xl"
+            className="glow-border mx-auto w-full object-cover"
           />
 
           <img
             src="/ortho2.jpg"
             alt="Ortho2"
-            className="mx-auto w-full object-cover shadow-2xl"
+            className="glow-border mx-auto w-full object-cover"
           />
         </div>
 
@@ -291,12 +295,12 @@ void loop() {
         <img
           src="/circuit.png"
           alt="circuit"
-          className="mx-auto mt-8 w-full max-w-[700px] object-cover shadow-2xl"
+          className="glow-border mx-auto mt-8 w-full max-w-[700px] object-cover"
         />
 
         {/* Final Claw */}
         <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-center">
-          <p className="flex-1 text-base leading-7 text-white sm:text-xl">
+          <p className="flex-1 text-base leading-7 text-muted sm:text-xl">
             When assembling the claw a few problems arose that needed to be
             addressed. For instance, the range of motion of the claw was
             relatively limited due to the servo only rotating 180 degrees. To
@@ -316,7 +320,7 @@ void loop() {
           <img
             src="/finalClaw.jpg"
             alt="Final Claw"
-            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
+            className="glow-border mx-auto w-full max-w-[300px] object-cover sm:max-w-[350px] md:mx-0"
           />
         </div>
 
@@ -324,7 +328,7 @@ void loop() {
         <div className="mt-16 flex justify-center pb-12">
           <a
             href="#top"
-            className="project-button rounded-lg bg-white px-6 py-3 font-medium text-zinc-950"
+            className="project-button rounded-lg border border-[var(--accent)]/50 px-6 py-3 font-medium text-[var(--accent)] hover:text-white"
           >
             Return to Top ↑
           </a>

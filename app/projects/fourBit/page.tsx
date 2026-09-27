@@ -1,10 +1,10 @@
 export default function Project1() {
   return (
-    <main id="top" className="min-h-screen bg-[#080D12]">
+    <main id="top" className="min-h-screen">
       {/* Navbar */}
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-8 md:px-10">
         <div className="flex items-center">
-          <span className="text-xs font-medium tracking-[0.2em] text-zinc-400 sm:text-sm">
+          <span className="mono-label text-xs font-medium text-muted sm:text-sm">
             PROJECT
           </span>
         </div>
@@ -12,7 +12,7 @@ export default function Project1() {
         <div className="flex items-center gap-3">
           <a
             href="/"
-            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950"
+            className="project-button inline-block rounded-lg border border-[var(--accent)]/50 px-3 py-2 text-sm font-medium text-[var(--accent)] hover:text-white"
           >
             Home
           </a>
@@ -21,19 +21,23 @@ export default function Project1() {
 
       {/* Main Content */}
       <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-10">
-        <h1 className="mt-4 text-4xl font-bold tracking-tight text-[var(--accent)] sm:text-5xl">
+        <p className="animate-in mono-label text-xs text-[var(--accent-secondary)]">
+          / PROJECT
+        </p>
+
+        <h1 className="animate-in delay-1 gradient-text mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
           4-Bit Transistor Network Binary Adder
         </h1>
 
         <img
           src="/4main.jpeg"
           alt="4 Bit Adder"
-          className="mx-auto mt-8 h-[250px] w-full object-contain shadow-2xl sm:h-[350px] lg:h-[500px]"
+          className="glow-border mx-auto mt-8 h-[250px] w-full object-contain sm:h-[350px] lg:h-[500px]"
         />
 
         {/* Purpose */}
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Purpose</span>
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Purpose</span>
           : To design and build a functional 4-bit binary adder using discrete
           transistor-based logic gates, demonstrating the implementation of
           digital logic and binary arithmetic through hardware-level circuit
@@ -42,10 +46,10 @@ export default function Project1() {
 
         {/* Understanding the Task */}
         <p
-          className="mt-14 text-base leading-7 text-white sm:text-xl"
+          className="mt-14 text-base leading-7 text-muted sm:text-xl"
           id="understanding"
         >
-          <span className="underline">Understanding the Task</span>
+          <span className="text-[var(--accent-secondary)] underline">Understanding the Task</span>
           : I got inspired to pursue this project after watching the following
           youtube video by ElectroBOOM (
           <a
@@ -70,7 +74,7 @@ export default function Project1() {
         </p>
 
         <div className="mt-14 flex flex-col gap-8 md:flex-row md:items-center">
-          <div className="text-base leading-7 text-white sm:text-xl">
+          <div className="text-base leading-7 text-muted sm:text-xl">
             Before getting carried away with complex transistor networks, I
             wanted to learn from the absolute basics. So I began using my
             understanding of basic parallel and series connections to create
@@ -79,19 +83,19 @@ export default function Project1() {
             <br />
             After practicing with the fundamental logic gates, I recognized how
             I should approach this project:
-            <ol className="mt-6 space-y-4 text-base leading-7 text-white sm:text-xl">
+            <ol className="mt-6 space-y-4 text-base leading-7 text-muted sm:text-xl">
               <li className="flex gap-2">
-                <span className="shrink-0">1.</span>
+                <span className="shrink-0 text-[var(--accent)]">1.</span>
                 <span>
                   Design the logic gate system for each bit of the adder.
                 </span>
               </li>
               <li className="flex gap-2">
-                <span className="shrink-0">2.</span>
+                <span className="shrink-0 text-[var(--accent)]">2.</span>
                 <span>Design the individual circuits for each gate.</span>
               </li>
               <li className="flex gap-2">
-                <span className="shrink-0">3.</span>
+                <span className="shrink-0 text-[var(--accent)]">3.</span>
                 <span>Create the full adder circuit on breadboards.</span>
               </li>
             </ol>
@@ -103,7 +107,7 @@ export default function Project1() {
             muted
             loop
             playsInline
-            className="mx-auto h-[250px] w-full object-contain shadow-2xl sm:h-[350px] lg:h-[500px]"
+            className="glow-border mx-auto h-[250px] w-full object-contain sm:h-[350px] lg:h-[500px]"
           />
 
           <video
@@ -112,7 +116,7 @@ export default function Project1() {
             muted
             loop
             playsInline
-            className="mx-auto h-[250px] w-full object-contain shadow-2xl sm:h-[350px] lg:h-[500px]"
+            className="glow-border mx-auto h-[250px] w-full object-contain sm:h-[350px] lg:h-[500px]"
           />
         </div>
 
@@ -121,12 +125,12 @@ export default function Project1() {
           <img
             src="/transistor.jpg"
             alt="transistor"
-            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
+            className="glow-border mx-auto w-full max-w-[300px] object-cover sm:max-w-[350px] md:mx-0"
           />
 
           <div className="flex-1">
-            <p className="text-base leading-7 text-white sm:text-xl">
-              <span className="underline">Tools & Constraints</span>
+            <p className="text-base leading-7 text-muted sm:text-xl">
+              <span className="text-[var(--accent-secondary)] underline">Tools & Constraints</span>
               : For this project, I used discrete NPN (and, as I later
               discovered I would need) PNP BJT transistors, resistors, LEDs,
               switches, jumper wires, and a solderless breadboard to design and
@@ -140,8 +144,8 @@ export default function Project1() {
           </div>
         </div>
 
-        <p className="mt-14 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Falstad Simulation</span>
+        <p className="mt-14 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Falstad Simulation</span>
           : After creating some sample logic gates on my breadboard, I wanted a
           more efficient method of prototyping, so I began with using tinkerCAD
           which I had the most familiarity with. Very quickly, however, I
@@ -166,10 +170,10 @@ export default function Project1() {
         <img
           src="/adderExcel.png"
           alt="adderExcel"
-          className="mx-auto mt-8 w-full object-contain shadow-2xl sm:w-[750px] lg:w-[1000px]"
+          className="glow-border mx-auto mt-8 w-full object-contain sm:w-[750px] lg:w-[1000px]"
         />
 
-        <p className="mt-8 text-base leading-7 text-white sm:text-xl">
+        <p className="mt-8 text-base leading-7 text-muted sm:text-xl">
           Things got more complicated when I started considering how the bits
           after the first would behave because along with the actual digit
           switch input, there is the additional input of the carry bit from the
@@ -180,7 +184,7 @@ export default function Project1() {
 
         <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-center">
           <div className="flex-1 space-y-6">
-            <p className="text-base leading-7 text-white sm:text-xl">
+            <p className="text-base leading-7 text-muted sm:text-xl">
               The sum bit follows another XOR pattern because we are quite
               literally taking the sum of the carry value and the switch
               inputs. For the carry bit, either the switch inputs are both on
@@ -188,21 +192,21 @@ export default function Project1() {
               both on (another AND gate).
             </p>
 
-            <p className="text-base leading-7 text-white sm:text-xl">
+            <p className="text-base leading-7 text-muted sm:text-xl">
               After experimenting with the logic components in Falstad, I began
               building up the full four bit system using the identified logic
               gates from above. I used an LED to represent each of the four sum
               bits plus an additional one to indicate the final carry bit.
             </p>
 
-            <p className="text-base leading-7 text-white sm:text-xl">
+            <p className="text-base leading-7 text-muted sm:text-xl">
               The schematic to the right shows the simulation computing the sum
               of 10 (binary:{" "}
-              <span className="font-mono">1010</span>) represented by the upper
+              <span className="font-mono text-[var(--accent-secondary)]">1010</span>) represented by the upper
               switches (reading from bottom to top) and 9 (binary:{" "}
-              <span className="font-mono">1001</span>) represented by the bottom
+              <span className="font-mono text-[var(--accent-secondary)]">1001</span>) represented by the bottom
               switches. The sum 19 (binary:{" "}
-              <span className="font-mono">10011</span>) is indicated by the
+              <span className="font-mono text-[var(--accent-secondary)]">10011</span>) is indicated by the
               LED&apos;s (also reading bottom to top).
             </p>
           </div>
@@ -210,12 +214,12 @@ export default function Project1() {
           <img
             src="/adderLogic.png"
             alt="Falstad simulation of a four-bit ripple-carry adder"
-            className="mx-auto w-full max-w-[550px] object-cover shadow-2xl md:mx-0"
+            className="glow-border mx-auto w-full max-w-[550px] object-cover md:mx-0"
           />
         </div>
 
-        <p className="mt-14 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Individual Logic Gate Design:</span>
+        <p className="mt-14 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Individual Logic Gate Design:</span>
           : Now I could work on a smaller scale and create the transistor
           network for each logic gate. This was actually a simple process (at
           least for now, before I started actually building the circuit and
@@ -233,7 +237,7 @@ export default function Project1() {
           gate took more thinking, but it was essentially just a combination of
           OR and AND, as an AND output is inverted and then ANDed with the OR
           output:{" "}
-          <span className="font-serif italic">
+          <span className="font-serif italic text-[var(--accent-secondary)]">
             A⊕B=(A∨B)∧¬(A∧B)
           </span>
           .
@@ -245,7 +249,7 @@ export default function Project1() {
           muted
           loop
           playsInline
-          className="mx-auto mt-6 h-auto w-full max-w-[700px] object-contain shadow-2xl"
+          className="glow-border mx-auto mt-6 h-auto w-full max-w-[700px] object-contain"
         />
 
         <div className="mt-14 flex flex-col gap-8 md:flex-row md:items-center">
@@ -253,12 +257,12 @@ export default function Project1() {
             src="/oneBit.mp4"
             playsInline
             controls
-            className="mx-auto h-auto w-full max-w-[300px] object-contain shadow-2xl"
+            className="glow-border mx-auto h-auto w-full max-w-[300px] object-contain"
           />
 
           <div className="flex-1">
-            <p className="text-base leading-7 text-white sm:text-xl">
-              <span className="underline">Building the Adder</span>
+            <p className="text-base leading-7 text-muted sm:text-xl">
+              <span className="text-[var(--accent-secondary)] underline">Building the Adder</span>
               : I followed my Falstad schematics to create my adder on
               breadboards. I used two 4 position DIP switches to represent the
               two numbers in binary as well as LED&apos;s to indicate my total
@@ -285,7 +289,7 @@ export default function Project1() {
           </div>
         </div>
 
-        <p className="mt-8 text-base leading-7 text-white sm:text-xl">
+        <p className="mt-8 text-base leading-7 text-muted sm:text-xl">
           After a lot of frustration I decided to take a step back and iterate
           by creating a Falstad transistor network for an XOR gate (sum of
           current bits) and an AND gate&apos;s (previous carry bit) outputs
@@ -314,10 +318,10 @@ export default function Project1() {
         <img
           src="/compoundLogic.png"
           alt="compoundLogicNetwork"
-          className="mx-auto mt-6 w-full max-w-[1000px] object-contain shadow-2xl"
+          className="glow-border mx-auto mt-6 w-full max-w-[1000px] object-contain"
         />
 
-        <p className="mt-8 text-base leading-7 text-white sm:text-xl">
+        <p className="mt-8 text-base leading-7 text-muted sm:text-xl">
           This prototyping made my task quite a bit easier but I still
           wasn&apos;t ready for the amount of time and frustration that wiring
           four bits of logic would cause. After lots of troubleshooting,
@@ -325,19 +329,19 @@ export default function Project1() {
           achieve the desired result: A functional fully-transistor based
           network four bit adder! A demonstration is shown below, adding 11 + 9
           = 20 (in binary:{" "}
-          <span className="font-mono">1011 + 1001 = 10100</span>).
+          <span className="font-mono text-[var(--accent-secondary)]">1011 + 1001 = 10100</span>).
         </p>
 
         <video
           src="/adderDemonstration.mp4"
           playsInline
           controls
-          className="mx-auto mt-6 h-auto w-full max-w-[700px] object-contain shadow-2xl"
+          className="glow-border mx-auto mt-6 h-auto w-full max-w-[700px] object-contain"
         />
 
         {/* Conclusion & Reflection */}
-        <p className="mt-14 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Conclusion & Reflection</span>
+        <p className="mt-14 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Conclusion & Reflection</span>
           : In the end, I was able to successfully design and build a
           functional four-bit binary adder entirely from discrete
           transistor-based logic gates. The completed system combined the logic
@@ -359,7 +363,7 @@ export default function Project1() {
         <div className="mt-16 flex justify-center pb-12">
           <a
             href="#top"
-            className="project-button rounded-lg bg-white px-6 py-3 font-medium text-zinc-950"
+            className="project-button rounded-lg border border-[var(--accent)]/50 px-6 py-3 font-medium text-[var(--accent)] hover:text-white"
           >
             Return to Top ↑
           </a>

@@ -1,10 +1,10 @@
 export default function Project1() {
   return (
-    <main id="top" className="min-h-screen bg-[#080D12]">
+    <main id="top" className="min-h-screen">
       {/* Navbar */}
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-8 md:px-10">
         <div className="flex items-center">
-          <span className="text-xs font-medium tracking-[0.2em] text-zinc-400 sm:text-sm">
+          <span className="mono-label text-xs font-medium text-muted sm:text-sm">
             PROJECT
           </span>
         </div>
@@ -12,7 +12,7 @@ export default function Project1() {
         <div className="flex items-center gap-3">
           <a
             href="/"
-            className="project-button inline-block rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950"
+            className="project-button inline-block rounded-lg border border-[var(--accent)]/50 px-3 py-2 text-sm font-medium text-[var(--accent)] hover:text-white"
           >
             Home
           </a>
@@ -21,13 +21,17 @@ export default function Project1() {
 
       {/* Main Content */}
       <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-10">
-        <h1 className="mt-4 text-4xl font-bold tracking-tight text-[var(--accent)] sm:text-5xl">
+        <p className="animate-in mono-label text-xs text-[var(--accent-secondary)]">
+          / PROJECT
+        </p>
+
+        <h1 className="animate-in delay-1 gradient-text mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
           VEX Robotics - Spin Up
         </h1>
 
         {/* Purpose */}
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Purpose</span>
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Purpose</span>
           : To design and build a competitive VEX robot capable of collecting
           and scoring discs, controlling field rollers, and maximizing points
           through strategic field coverage for the VEX Robotics Competition
@@ -35,8 +39,8 @@ export default function Project1() {
         </p>
 
         {/* Understanding the Task */}
-        <p className="mt-14 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Understanding the Task</span>
+        <p className="mt-14 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Understanding the Task</span>
           : I worked with two other teammates to take on the VEX Robotics
           Competition Spin Up challenge. Our first step was understanding the
           game manual and breaking down the different scoring opportunities,
@@ -51,10 +55,10 @@ export default function Project1() {
         <img
           src="/field.png"
           alt="Spin Up competition field"
-          className="mx-auto mt-8 h-[250px] w-full object-contain shadow-2xl sm:h-[350px] lg:h-[500px]"
+          className="glow-border mx-auto mt-8 h-[250px] w-full object-contain sm:h-[350px] lg:h-[500px]"
         />
 
-        <p className="mt-8 text-base leading-7 text-white sm:text-xl">
+        <p className="mt-8 text-base leading-7 text-muted sm:text-xl">
           Because we were a team of three, all new to robotics, we also
           established basic team roles early in the design process based on
           general interest. I took the role of design lead, focusing on
@@ -69,9 +73,9 @@ export default function Project1() {
           We identified the main subsystems our robot would need:
         </p>
 
-        <ol className="mt-6 space-y-4 text-base leading-7 text-white sm:text-xl">
+        <ol className="mt-6 space-y-4 text-base leading-7 text-muted sm:text-xl">
           <li className="flex gap-2">
-            <span className="shrink-0">Drivetrain - </span>
+            <span className="shrink-0 text-[var(--accent)]">Drivetrain - </span>
             <span>
               A fast and controllable base capable of navigating the field and
               positioning accurately.
@@ -79,7 +83,7 @@ export default function Project1() {
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Disc Intake - </span>
+            <span className="shrink-0 text-[var(--accent)]">Disc Intake - </span>
             <span>
               A mechanism capable of collecting Discs quickly while respecting
               the three-Disc possession limit.
@@ -87,7 +91,7 @@ export default function Project1() {
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Scoring Mechanism - </span>
+            <span className="shrink-0 text-[var(--accent)]">Scoring Mechanism - </span>
             <span>
               A reliable system for transferring and launching Discs into the
               High Goal.
@@ -95,14 +99,14 @@ export default function Project1() {
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Roller Mechanism - </span>
+            <span className="shrink-0 text-[var(--accent)]">Roller Mechanism - </span>
             <span>
               A way to interact with and change the colour of the field Rollers.
             </span>
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Autonomous System - </span>
+            <span className="shrink-0 text-[var(--accent)]">Autonomous System - </span>
             <span>
               A programmed routine capable of navigating the field and
               completing scoring objectives without driver input.
@@ -110,7 +114,7 @@ export default function Project1() {
           </li>
 
           <li className="flex gap-2">
-            <span className="shrink-0">Endgame Expansion - </span>
+            <span className="shrink-0 text-[var(--accent)]">Endgame Expansion - </span>
             <span>
               A mechanism that allowed us to compete for the final scoring
               opportunities during the Endgame.
@@ -121,8 +125,8 @@ export default function Project1() {
         {/* Tools & Constraints */}
         <div className="mt-14 flex flex-col gap-8 md:flex-row md:items-center">
           <div className="flex-1">
-            <p className="text-base leading-7 text-white sm:text-xl">
-              <span className="underline">Tools & Constraints</span>
+            <p className="text-base leading-7 text-muted sm:text-xl">
+              <span className="text-[var(--accent-secondary)] underline">Tools & Constraints</span>
               : For the project, we primarily used the VEX V5 robotics platform,
               including the V5 Brain, Controller, sensors, gears, wheels, and
               structural components to build and operate the robot, as well as
@@ -139,13 +143,13 @@ export default function Project1() {
           <img
             src="/v5.jpg"
             alt="VEX V5 system"
-            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
+            className="glow-border mx-auto w-full max-w-[300px] object-cover sm:max-w-[350px] md:mx-0"
           />
         </div>
 
         {/* Drivetrain & Scoring */}
-        <p className="mt-14 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Drivetrain & Scoring</span>
+        <p className="mt-14 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Drivetrain & Scoring</span>
           : We began by deciding how to use our limited eight-motor allowance.
           For the drivetrain, we wanted to preserve motors for scoring, so we
           chose a simple four-motor drivetrain optimized for speed with a
@@ -156,11 +160,11 @@ export default function Project1() {
           <img
             src="/temp.jpeg"
             alt="Temporary robot"
-            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl md:mx-0"
+            className="glow-border mx-auto w-full max-w-[300px] object-cover md:mx-0"
           />
 
           <div className="flex-1">
-            <p className="text-base leading-7 text-white sm:text-xl">
+            <p className="text-base leading-7 text-muted sm:text-xl">
               Our research narrowed the scoring mechanism down to a flywheel or
               catapult. After comparing cycle time, reliability, complexity, and
               autonomous performance, we ultimately chose a catapult because of
@@ -174,8 +178,8 @@ export default function Project1() {
         </div>
 
         {/* Roller & Endgame */}
-        <p className="mt-14 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Roller & Endgame</span>
+        <p className="mt-14 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Roller & Endgame</span>
           : We deliberately left the Roller and Expansion systems until later
           since they were less critical and mechanically simpler. Our prototypes
           used a motor-driven wheel for the Rollers and a pneumatic string
@@ -183,8 +187,8 @@ export default function Project1() {
         </p>
 
         {/* Intake */}
-        <p className="mt-14 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Intake Development</span>
+        <p className="mt-14 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Intake Development</span>
           : For our intake, we initially planned to use flexwheels, which were
           widely used in Spin Up because their flexible surfaces provided
           excellent grip on the Discs. However, flexwheels were in extremely
@@ -194,7 +198,7 @@ export default function Project1() {
         </p>
 
         <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
-          <div className="flex-1 text-base leading-7 text-white sm:text-xl">
+          <div className="flex-1 text-base leading-7 text-muted sm:text-xl">
             <p>
               Our first alternative was a chain-based conveyor system using VEX
               flaps to carry Discs into the robot. While the concept worked, the
@@ -212,13 +216,13 @@ export default function Project1() {
           <img
             src="/intake.png"
             alt="Intake"
-            className="mx-auto w-full max-w-[300px] object-cover shadow-2xl sm:max-w-[350px] md:mx-0"
+            className="glow-border mx-auto w-full max-w-[300px] object-cover sm:max-w-[350px] md:mx-0"
           />
         </div>
 
         {/* Implementing the Catapult */}
-        <p className="mt-14 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Implementing the Catapult</span>
+        <p className="mt-14 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Implementing the Catapult</span>
           : Once our required gears and pinions arrived, we began implementing
           the catapult mechanism. Although the concept looked straightforward
           in CAD, the physical implementation required significantly more
@@ -237,11 +241,11 @@ export default function Project1() {
               muted
               loop
               playsInline
-              className="mx-auto w-full object-cover shadow-2xl"
+              className="glow-border mx-auto w-full object-cover"
             />
           </div>
 
-          <div className="flex-1 text-base leading-7 text-white sm:text-xl">
+          <div className="flex-1 text-base leading-7 text-muted sm:text-xl">
             <p>
               To achieve the required motion in practice, we had to tune the gear
               ratio and physical position of the mechanism through repeated
@@ -256,7 +260,7 @@ export default function Project1() {
           </div>
         </div>
 
-        <p className="mt-6 text-base leading-7 text-white sm:text-xl">
+        <p className="mt-6 text-base leading-7 text-muted sm:text-xl">
           This process taught me an important limitation of CAD: a mechanism can
           appear correct geometrically while still behaving very differently once
           real forces are introduced. The final catapult was therefore the result
@@ -264,8 +268,8 @@ export default function Project1() {
         </p>
 
         {/* Conclusion & Reflection */}
-        <p className="mt-14 text-base leading-7 text-white sm:text-xl">
-          <span className="underline">Conclusion & Reflection</span>
+        <p className="mt-14 text-base leading-7 text-muted sm:text-xl">
+          <span className="text-[var(--accent-secondary)] underline">Conclusion & Reflection</span>
           : Our final robot combined the mechanical systems we had developed with
           the CAD work and iterative testing that guided their implementation. I
           was able to present our completed robot design, CAD models, and
@@ -282,7 +286,7 @@ export default function Project1() {
           <img
             src="/vexbot.JPG"
             alt="Award"
-            className="mx-auto h-[250px] w-full object-contain shadow-2xl sm:h-[350px] lg:h-[500px]"
+            className="glow-border mx-auto h-[250px] w-full object-contain sm:h-[350px] lg:h-[500px]"
           />
 
           <video
@@ -291,13 +295,13 @@ export default function Project1() {
             muted
             loop
             playsInline
-            className="mx-auto h-[250px] w-full object-contain shadow-2xl sm:h-[350px] lg:h-[500px]"
+            className="glow-border mx-auto h-[250px] w-full object-contain sm:h-[350px] lg:h-[500px]"
           />
 
           <img
             src="/tempbot.jpg"
             alt="Temporary robot"
-            className="mx-auto h-[250px] w-full object-contain shadow-2xl sm:h-[350px] lg:h-[500px]"
+            className="glow-border mx-auto h-[250px] w-full object-contain sm:h-[350px] lg:h-[500px]"
           />
         </div>
 
@@ -305,7 +309,7 @@ export default function Project1() {
         <div className="mt-16 flex justify-center pb-12">
           <a
             href="#top"
-            className="project-button rounded-lg bg-white px-6 py-3 font-medium text-zinc-950"
+            className="project-button rounded-lg border border-[var(--accent)]/50 px-6 py-3 font-medium text-[var(--accent)] hover:text-white"
           >
             Return to Top ↑
           </a>

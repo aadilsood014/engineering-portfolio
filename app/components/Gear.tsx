@@ -130,7 +130,7 @@ export default function Gear({
       >
         <path
           d={gearPath}
-          fill="#8B7CF6"
+          fill="var(--accent)"
         />
 
         {/* Center hole */}
@@ -138,7 +138,7 @@ export default function Gear({
           cx={center}
           cy={center}
           r={pitchRadius * 0.38}
-          fill="#0a0a0a"
+          fill="var(--background)"
         />
       </svg>
     </div>
