@@ -141,7 +141,7 @@ export default function Home() {
             </p>
 
             <p className="mono-label mt-4 text-xs leading-relaxed text-[var(--accent-secondary)]">
-              Skills: Digital Logic · Transistor Circuits · Boolean Logic · Falstad · Breadboard Prototyping
+              Digital Logic · Transistor Circuits · Boolean Logic · Falstad · Breadboard Prototyping
             </p>
           </Link>
 
@@ -169,7 +169,7 @@ export default function Home() {
             </p>
 
             <p className="mono-label mt-4 text-xs leading-relaxed text-[var(--accent-secondary)]">
-              Skills: Python · Serial Communication · Excel Automation · Precision Metrology
+              Python · Serial Communication · Excel Automation · Precision Metrology
             </p>
           </Link>
 
@@ -198,7 +198,7 @@ export default function Home() {
             </p>
 
             <p className="mono-label mt-4 text-xs leading-relaxed text-[var(--accent-secondary)]">
-              Skills: C++ · Arduino · Engineering Drawing ·
+              C++ · Arduino · Engineering Drawing ·
               Mechanical Fabrication
             </p>
           </Link>
@@ -226,7 +226,7 @@ export default function Home() {
             </p>
 
             <p className="mono-label mt-4 text-xs leading-relaxed text-[var(--accent-secondary)]">
-              Skills: Fusion 360 · CAD · Mechanical Design · Subsystem Design · Iterative Design
+              Fusion 360 · CAD · Mechanical Design · Subsystem Design · Iterative Design
             </p>
           </Link>
 
