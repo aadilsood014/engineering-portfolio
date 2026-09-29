@@ -50,7 +50,7 @@ export default function About() {
           </video>
 
           <img
-            src="/07cf61db-1535-4201-94b4-34623634fdb4.jpg"
+            src="/pfp.jpeg"
             alt="Me"
             className="glow-border mx-auto h-[250px] w-full rounded-xl object-contain sm:h-[350px] lg:h-[500px]"
           />

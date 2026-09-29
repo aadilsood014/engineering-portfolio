@@ -98,7 +98,7 @@ export default function Home() {
             <div className="absolute -bottom-4 -right-3 h-full w-full max-w-[350px] rounded-2xl border border-[var(--accent-secondary)]/60 sm:-right-4" />
 
             <img
-              src="/07cf61db-1535-4201-94b4-34623634fdb4.jpg"
+              src="/pfp.jpeg"
               alt="Aadil"
               className="glow-border relative w-full max-w-[300px] rounded-2xl object-cover sm:max-w-[350px]"
             />
