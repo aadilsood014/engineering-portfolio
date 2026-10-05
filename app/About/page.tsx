@@ -57,8 +57,7 @@ export default function About() {
         </div>
 
         <p className="mt-8 text-base leading-7 text-muted sm:text-xl">
-          My name is Aadil Sood and I am a second year Engineering Physics Student excited to pursue a career
-          combining practical engineering aplications with theoretical physics!
+          My name is Aadil Sood, and I’m a second-year Engineering Physics student interested in building practical solutions at the intersection of electrical systems, hardware, and software.
         </p>
 
         {/* Why Engineering Physics */}
@@ -67,24 +66,7 @@ export default function About() {
         </h2>
 
         <p className="mt-4 text-base leading-7 text-muted sm:text-xl">
-          Engineering Physics stood out to me because of its balance between
-          understanding why something works and learning how to apply it. I especially enjoyed
-          exploring the physics behind circuits and electromagnetism in my
-          first year, then applying those concepts through laboratory work.
-        </p>
-
-        {/* My Design Process */}
-        <h2 className="gradient-text mt-12 text-2xl font-semibold sm:text-3xl">
-          My Design Process
-        </h2>
-
-        <p className="mt-4 text-base leading-7 text-muted sm:text-xl">
-          I learn best by experimenting, building, and iterating. For instance, when I began
-          learning CAD for competitive robotics, I developed my skills by
-          experimenting, testing, and refining components based on every day objects I practiced modelling rather than relying on
-          tutorials. Leading a team of three showed me how mechanical design,
-          rapid prototyping, and programming can come together to solve real
-          problems.
+          Engineering Physics stood out to me because of the balance it provides between lectures, laboratory work, and hands-on engineering. I enjoy being able to learn the theory behind a concept in the classroom and then see it come to life through experiments and practical projects. I also value the interdisciplinary nature of the program, as it encourages me to approach problems from different perspectives and draw on ideas across engineering and the physical sciences. That combination of breadth and practical experience is what makes Engineering Physics a great fit for how I like to learn and solve problems.
         </p>
 
         {/* What I'm Interested In */}
@@ -93,12 +75,7 @@ export default function About() {
         </h2>
 
         <p className="mt-4 text-base leading-7 text-muted sm:text-xl">
-          Nuclear engineering has always fascinated me. In high school, I began
-          exploring topics beyond the IB Physics curriculum, including reactor
-          physics, nuclear binding energy, and radioactive decay chains. What
-          interests me most is the ability to harness the enormous energy stored
-          within the nucleus and turn it into a safe, reliable, and practical
-          source of energy at scale.
+          Electrical engineering has increasingly become one of my strongest interests. Through my engineering projects and work with UBC’s Mars Colony Design Team, I have become fascinated by how electrical systems bring together hardware and software to make complex technologies work reliably. I especially enjoy understanding how signals, sensors, and embedded systems interact to control and monitor physical systems. What interests me most is the opportunity to design electrical systems that solve real-world problems, particularly in areas such as energy and advanced technology where reliability and efficiency are essential.
         </p>
 
         {/* Beyond Engineering */}
