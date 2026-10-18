@@ -118,6 +118,33 @@ export default function Home() {
         <div className="mt-6 grid gap-6 md:grid-cols-2">
 
           <Link
+            href="/projects/pcb1"
+            className="project-card block rounded-xl p-6 sm:p-10"
+          >
+            <div className="mx-auto mb-4 flex h-[220px] w-full max-w-[300px] items-center justify-center">
+              <img
+                src="/pcb1.png"
+                alt="PCB temp"
+                className="h-full w-full object-contain"
+              />
+            </div>
+
+            <h3 className="gradient-text text-2xl font-semibold">
+              STM32-Based Dual Temperature Monitor
+            </h3>
+
+            <p className="mt-4 leading-relaxed text-muted">
+              Designed a custom PCB in Altium featuring an STM32 microcontroller for temperature monitoring within the Sabatier reactor system.
+              Integrated two MAX6675 thermocouple interface ICs over SPI, alongside voltage regulation, USB-C power, and SWD programming access.
+              Developed PCB layout and performing design rule checks to evaluate electrical connectivity, component placement, and manufacturability.
+            </p>
+
+            <p className="mono-label mt-4 text-xs leading-relaxed text-[var(--accent-secondary)]">
+              PCB Design · Altium · STM-32 · Decoupling · SPI Communication 
+            </p>
+          </Link>
+
+          <Link
             href="/projects/fourBit"
             className="project-card block rounded-xl p-6 sm:p-10"
           >
