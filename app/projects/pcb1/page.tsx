@@ -134,7 +134,7 @@ void loop() {
 
         <div className="mt-8">
           <img
-            src="/temperature-system-overview.jpg"
+            src="/proto.jpeg"
             alt="PC, ESP32, Arduino Nano, and thermocouple communication workflow"
             className="glow-border mx-auto w-full max-w-4xl object-cover"
           />
@@ -205,7 +205,7 @@ void loop() {
 
         <div className="mt-8">
           <img
-            src="/spi-timing-diagram.png"
+            src="/temp1.jpeg"
             alt="SPI timing and serial data transfer for the MAX6675"
             className="glow-border mx-auto w-full max-w-3xl object-cover"
           />
@@ -421,12 +421,6 @@ void loop() {
             design, and physical board layout must work together in an
             embedded system.
           </p>
-
-          <img
-            src="/stm32cubemx-configuration.png"
-            alt="STM32CubeMX microcontroller configuration interface"
-            className="glow-border mx-auto w-full max-w-[300px] object-cover sm:max-w-[350px] md:mx-0"
-          />
         </div>
 
         {/* Return to Top */}
